@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+      - name: build tools
+        run: brew install re2c autoconf automake xz cmake libtool
       - name: build
         run: |
           test "$(uname -m)" = arm64

@@ -20,7 +20,8 @@ if [ ! -d "$WORK" ]; then
 fi
 cd "$WORK"
 if [ "$(git rev-parse HEAD)" != "$SPC_COMMIT" ]; then echo "static-php-cli is not the pinned commit" >&2; exit 2; fi
-export PATH="$WORK/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# (Homebrew: /usr/local on Intel, /opt/homebrew on Apple Silicon)
+export PATH="$WORK/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # (the oldest macOS both builds run on: the first with Apple Silicon; every library inherits it)
 export MACOSX_DEPLOYMENT_TARGET=11.0
 if [ "$ARCH" = "arm64" ]; then

@@ -21,6 +21,9 @@ jobs:
       - name: build tools
         run: brew install re2c autoconf automake xz cmake libtool
       - name: build
+        env:
+          # (static-php-cli reads library releases through GitHub's API: anonymous calls from a runner get 403)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           test "$(uname -m)" = arm64
           bash ./mac_php_build.sh arm64 "${{ inputs.series }}"

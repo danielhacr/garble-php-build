@@ -1,0 +1,46 @@
+# The Mac bundle's arm64 PHP (docs/ref/macarm/PLAN.md §3.1, Daniel's choice 2026-10-27: a GitHub Actions Apple Silicon
+# runner, because static-php-cli builds only for the machine it runs on and the Mac mini is Intel). It runs the same
+# tools/mac_php_build.sh as the Mac mini, from php.net's source, then checks the binary where it can run: arch, linked
+# libraries, minos, version, extensions, TLS. The binary and a SHA-256 line are the run's artifact; tools/mac_php.lock
+# pins that SHA-256. Copied as .github/workflows/mac-php-arm64.yml into the build repo, beside mac_php_build.sh.
+name: mac-php-arm64
+on:
+  workflow_dispatch:
+    inputs:
+      series:
+        description: PHP series
+        default: "8.4"
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-14
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: build
+        run: |
+          test "$(uname -m)" = arm64
+          bash ./mac_php_build.sh arm64 "${{ inputs.series }}"
+      - name: check
+        run: |
+          set -euo pipefail
+          BIN="$(ls ~/gd-php/out/php-*-macos-arm64)"
+          test "$(lipo -archs "$BIN")" = arm64
+          LIBS="$(otool -L "$BIN" | tail -n +2 | awk '{print $1}' | grep -v -E '^(/usr/lib/|/System/)' || true)"
+          test -z "$LIBS"
+          MINOS="$(otool -l "$BIN" | awk '/LC_BUILD_VERSION/{f=1} f&&/minos/{print $2; exit}')"
+          test "$(printf '%s\n11.0\n' "$MINOS" | sort -V | tail -1)" = 11.0
+          "$BIN" -v
+          for e in ctype filter mbstring openssl pcntl posix sockets zlib tokenizer; do
+            "$BIN" -r "exit(extension_loaded('$e') ? 0 : 1);"
+          done
+          curl -fsSL -o cacert.pem https://curl.se/ca/cacert.pem
+          "$BIN" -d openssl.cafile="$PWD/cacert.pem" -r '$c = stream_socket_client("ssl://garble.bot:443", $n, $s, 15, STREAM_CLIENT_CONNECT, stream_context_create(["ssl" => ["verify_peer" => true]])); exit($c ? 0 : 1);'
+          mkdir out && cp "$BIN" out/
+          (cd out && shasum -a 256 * > SHA256.txt && cat SHA256.txt)
+          cat ~/gd-php/out/build.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: php-macos-arm64
+          path: out/

@@ -1,0 +1,306 @@
+﻿2026-10-28T02:54:33.5607040Z Current runner version: '2.338.0'
+2026-10-28T02:54:33.5643550Z ##[group]Runner Image Provisioner
+2026-10-28T02:54:33.5644410Z Hosted Compute Agent
+2026-10-28T02:54:33.5645880Z Version: 20260828.587
+2026-10-28T02:54:33.5646350Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-28T02:54:33.5646850Z Build Date: 2026-08-28T16:44:25Z
+2026-10-28T02:54:33.5647370Z Worker ID: {461219db-d7d1-4756-8709-890e89503327}
+2026-10-28T02:54:33.5647840Z Azure Region: westus
+2026-10-28T02:54:33.5648210Z ##[endgroup]
+2026-10-28T02:54:33.5649540Z ##[group]Operating System
+2026-10-28T02:54:33.5649940Z macOS
+2026-10-28T02:54:33.5650270Z 14.8.9
+2026-10-28T02:54:33.5650600Z 23J631
+2026-10-28T02:54:33.5650930Z ##[endgroup]
+2026-10-28T02:54:33.5651280Z ##[group]Runner Image
+2026-10-28T02:54:33.5651660Z Image: macos-14-arm64
+2026-10-28T02:54:33.5652030Z Version: 20260831.0302.1
+2026-10-28T02:54:33.5652930Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260831.0302/images/macos/macos-14-arm64-Readme.md
+2026-10-28T02:54:33.5653980Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260831.0302
+2026-10-28T02:54:33.5654640Z ##[endgroup]
+2026-10-28T02:54:33.5655410Z ##[group]GITHUB_TOKEN Permissions
+2026-10-28T02:54:33.5657150Z Contents: read
+2026-10-28T02:54:33.5657520Z Metadata: read
+2026-10-28T02:54:33.5657890Z ##[endgroup]
+2026-10-28T02:54:33.5659610Z Secret source: Actions
+2026-10-28T02:54:33.5660200Z Cache mode: write
+2026-10-28T02:54:33.5660750Z Prepare workflow directory
+2026-10-28T02:54:33.6026600Z Prepare all required actions
+2026-10-28T02:54:33.6067730Z Getting action download info
+2026-10-28T02:54:34.0116220Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-28T02:54:34.3452970Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-28T02:54:34.6751640Z Complete job name: build
+2026-10-28T02:54:34.7724160Z ##[group]Run actions/checkout@v4
+2026-10-28T02:54:34.7725000Z with:
+2026-10-28T02:54:34.7725400Z   repository: danielhacr/garble-php-build
+2026-10-28T02:54:34.7728560Z   token: ***
+2026-10-28T02:54:34.7728950Z   ssh-strict: true
+2026-10-28T02:54:34.7729320Z   ssh-user: git
+2026-10-28T02:54:34.7729660Z   persist-credentials: true
+2026-10-28T02:54:34.7730580Z   clean: true
+2026-10-28T02:54:34.7730960Z   sparse-checkout-cone-mode: true
+2026-10-28T02:54:34.7731360Z   fetch-depth: 1
+2026-10-28T02:54:34.7732210Z   fetch-tags: false
+2026-10-28T02:54:34.7732560Z   show-progress: true
+2026-10-28T02:54:34.7732920Z   lfs: false
+2026-10-28T02:54:34.7733250Z   submodules: false
+2026-10-28T02:54:34.7733650Z   set-safe-directory: true
+2026-10-28T02:54:34.7734090Z   allow-unsafe-pr-checkout: false
+2026-10-28T02:54:34.7734720Z ##[endgroup]
+2026-10-28T02:54:35.3394490Z Syncing repository: danielhacr/garble-php-build
+2026-10-28T02:54:35.3401870Z ##[group]Getting Git version info
+2026-10-28T02:54:35.3403310Z Working directory is '/Users/runner/work/garble-php-build/garble-php-build'
+2026-10-28T02:54:35.3405110Z [command]/opt/homebrew/bin/git version
+2026-10-28T02:54:35.3749690Z git version 2.55.0
+2026-10-28T02:54:35.3807410Z ##[endgroup]
+2026-10-28T02:54:35.3822290Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/f75b4886-eaa5-4160-a274-bb5a55a9fcc5/.gitconfig'
+2026-10-28T02:54:35.3833100Z Temporarily overriding HOME='/Users/runner/work/_temp/f75b4886-eaa5-4160-a274-bb5a55a9fcc5' before making global git config changes
+2026-10-28T02:54:35.3834990Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T02:54:35.3836660Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/garble-php-build/garble-php-build
+2026-10-28T02:54:35.4020120Z Deleting the contents of '/Users/runner/work/garble-php-build/garble-php-build'
+2026-10-28T02:54:35.4022660Z ##[group]Initializing the repository
+2026-10-28T02:54:35.4026790Z [command]/opt/homebrew/bin/git init /Users/runner/work/garble-php-build/garble-php-build
+2026-10-28T02:54:35.4380030Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-28T02:54:35.4383200Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-28T02:54:35.4385750Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-28T02:54:35.4387650Z hint: call:
+2026-10-28T02:54:35.4388990Z hint:
+2026-10-28T02:54:35.4390750Z hint: 	git config --global init.defaultBranch <name>
+2026-10-28T02:54:35.4392530Z hint:
+2026-10-28T02:54:35.4393260Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-28T02:54:35.4394110Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-28T02:54:35.4394780Z hint:
+2026-10-28T02:54:35.4395230Z hint: 	git branch -m <name>
+2026-10-28T02:54:35.4395710Z hint:
+2026-10-28T02:54:35.4396640Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-28T02:54:35.4397940Z Initialized empty Git repository in /Users/runner/work/garble-php-build/garble-php-build/.git/
+2026-10-28T02:54:35.4400360Z [command]/opt/homebrew/bin/git remote add origin https://github.com/danielhacr/garble-php-build
+2026-10-28T02:54:35.4526510Z ##[endgroup]
+2026-10-28T02:54:35.4528410Z ##[group]Disabling automatic garbage collection
+2026-10-28T02:54:35.4547890Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-28T02:54:35.4669830Z ##[endgroup]
+2026-10-28T02:54:35.4671830Z ##[group]Setting up auth
+2026-10-28T02:54:35.4693790Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T02:54:35.4814940Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T02:54:35.6105980Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T02:54:35.6181610Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T02:54:35.7149220Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-28T02:54:35.7217300Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-28T02:54:35.8265330Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-28T02:54:35.8380540Z ##[endgroup]
+2026-10-28T02:54:35.8383580Z ##[group]Fetching the repository
+2026-10-28T02:54:35.8390350Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d5d28a18b4e0953190a1855f6b3d85cb21e036e9:refs/remotes/origin/main
+2026-10-28T02:54:36.2757600Z From https://github.com/danielhacr/garble-php-build
+2026-10-28T02:54:36.2760610Z  * [new ref]         d5d28a18b4e0953190a1855f6b3d85cb21e036e9 -> origin/main
+2026-10-28T02:54:36.2766140Z ##[endgroup]
+2026-10-28T02:54:36.2768720Z ##[group]Determining the checkout info
+2026-10-28T02:54:36.2771460Z ##[endgroup]
+2026-10-28T02:54:36.2773150Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-28T02:54:36.2880610Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-28T02:54:36.2984100Z ##[group]Checking out the ref
+2026-10-28T02:54:36.2985900Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-28T02:54:36.3119320Z Switched to a new branch 'main'
+2026-10-28T02:54:36.3125390Z branch 'main' set up to track 'origin/main'.
+2026-10-28T02:54:36.3132460Z ##[endgroup]
+2026-10-28T02:54:36.3241950Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-28T02:54:36.3354230Z d5d28a18b4e0953190a1855f6b3d85cb21e036e9
+2026-10-28T02:54:36.3779220Z ##[group]Run brew install re2c autoconf automake xz cmake libtool
+2026-10-28T02:54:36.3782220Z [36;1mbrew install re2c autoconf automake xz cmake libtool[0m
+2026-10-28T02:54:36.3896900Z shell: /bin/bash -e {0}
+2026-10-28T02:54:36.3898440Z ##[endgroup]
+2026-10-28T02:54:39.2019310Z [33mWarning:[0m xz 5.8.3 is already installed and up-to-date.
+2026-10-28T02:54:39.2020120Z To reinstall 5.8.3, run:
+2026-10-28T02:54:39.2020580Z   brew reinstall xz
+2026-10-28T02:54:39.2073860Z [33mWarning:[0m cmake 4.4.3 is already installed and up-to-date.
+2026-10-28T02:54:39.2077570Z To reinstall 4.4.3, run:
+2026-10-28T02:54:39.2078180Z   brew reinstall cmake
+2026-10-28T02:54:40.1188180Z [32m==>[0m [1mDownloading bottle manifests[0m
+2026-10-28T02:54:40.1338210Z ✔︎ Bottle Manifest re2c (4.6)
+2026-10-28T02:54:40.1339730Z ✔︎ Bottle Manifest autoconf (2.73)
+2026-10-28T02:54:40.1341350Z ✔︎ Bottle Manifest automake (1.18.1_1)
+2026-10-28T02:54:40.1342440Z ✔︎ Bottle Manifest libtool (2.6.2)
+2026-10-28T02:54:40.1346100Z [34m==>[0m [1mWould install 4 formulae:[0m
+2026-10-28T02:54:40.1349180Z re2c autoconf automake libtool
+2026-10-28T02:54:40.2114630Z [34m==>[0m [1mWould install 1 dependency for autoconf:[0m
+2026-10-28T02:54:40.2115840Z m4
+2026-10-28T02:54:40.2140420Z [34m==>[0m [1mWould install 2 dependencies for automake:[0m
+2026-10-28T02:54:40.2141150Z m4
+2026-10-28T02:54:40.2141840Z autoconf
+2026-10-28T02:54:40.2188610Z [34m==>[0m [1mWould install 1 dependency for libtool:[0m
+2026-10-28T02:54:40.2216940Z m4
+2026-10-28T02:54:40.2553490Z [32m==>[0m [1mFetching downloads for: [32mre2c[39m, [32mautoconf[39m, [32mautomake[39m and [32mlibtool[39m[0m
+2026-10-28T02:54:40.5039140Z ✔︎ Bottle Manifest m4 (1.4.21)
+2026-10-28T02:54:40.5352710Z ✔︎ Bottle autoconf (2.73)
+2026-10-28T02:54:40.5587300Z ✔︎ Bottle automake (1.18.1_1)
+2026-10-28T02:54:40.5776340Z ✔︎ Bottle m4 (1.4.21)
+2026-10-28T02:54:40.5826530Z ✔︎ Bottle libtool (2.6.2)
+2026-10-28T02:54:40.7253480Z ✔︎ Bottle re2c (4.6)
+2026-10-28T02:54:40.7272040Z [34m==>[0m [1mPouring re2c--4.6.arm64_sonoma.bottle.tar.gz[0m
+2026-10-28T02:54:40.9622560Z 🍺  /opt/homebrew/Cellar/re2c/4.6: 43 files, 14.7MB
+2026-10-28T02:54:40.9667560Z [32m==>[0m [1mInstalling autoconf dependency: [32mm4[39m[0m
+2026-10-28T02:54:40.9693100Z [34m==>[0m [1mPouring m4--1.4.21.arm64_sonoma.bottle.tar.gz[0m
+2026-10-28T02:54:40.9863470Z 🍺  /opt/homebrew/Cellar/m4/1.4.21: 14 files, 814.5KB
+2026-10-28T02:54:40.9865010Z [32m==>[0m [1mInstalling [32mautoconf[39m[0m
+2026-10-28T02:54:40.9867570Z [34m==>[0m [1mPouring autoconf--2.73.arm64_sonoma.bottle.tar.gz[0m
+2026-10-28T02:54:41.0910920Z 🍺  /opt/homebrew/Cellar/autoconf/2.73: 73 files, 3.8MB
+2026-10-28T02:54:41.0977400Z [34m==>[0m [1mPouring automake--1.18.1_1.arm64_sonoma.bottle.tar.gz[0m
+2026-10-28T02:54:41.1683090Z 🍺  /opt/homebrew/Cellar/automake/1.18.1_1: 134 files, 3.6MB
+2026-10-28T02:54:41.1719070Z [34m==>[0m [1mPouring libtool--2.6.2.arm64_sonoma.bottle.tar.gz[0m
+2026-10-28T02:54:41.2295760Z 🍺  /opt/homebrew/Cellar/libtool/2.6.2: 78 files, 4.2MB
+2026-10-28T02:54:41.2297700Z [32m==>[0m [1mCaveats[0m
+2026-10-28T02:54:41.2300250Z [34m==>[0m [1mlibtool[0m
+2026-10-28T02:54:41.2301000Z All commands have been installed with the prefix "g".
+2026-10-28T02:54:41.2301530Z If you need to use these commands with their normal names, you
+2026-10-28T02:54:41.2302150Z can add a "gnubin" directory to your PATH from your bashrc like:
+2026-10-28T02:54:41.2302650Z   PATH="/opt/homebrew/opt/libtool/libexec/gnubin:$PATH"
+2026-10-28T02:54:41.2639250Z ##[group]Run test "$(uname -m)" = arm64
+2026-10-28T02:54:41.2640290Z [36;1mtest "$(uname -m)" = arm64[0m
+2026-10-28T02:54:41.2640970Z [36;1mbash ./mac_php_build.sh arm64 "8.4"[0m
+2026-10-28T02:54:41.2757210Z shell: /bin/bash -e {0}
+2026-10-28T02:54:41.2757410Z ##[endgroup]
+2026-10-28T02:54:42.4277020Z #=#=#                                                                          
+2026-10-28T02:54:42.6916850Z ##O#-#                                                                         
+2026-10-28T02:54:42.8770400Z ##O=#  #                                                                       
+2026-10-28T02:54:43.0410490Z #=#=-#  #                                                                      
+2026-10-28T02:54:43.2107470Z -#O#- #   #                                                                    
+2026-10-28T02:54:43.3655820Z -=#=#   #   #                                                                  
+2026-10-28T02:54:43.5276350Z -=O#-#   #   #                                                                 
+2026-10-28T02:54:43.5276700Z 
+2026-10-28T02:54:43.6308860Z                                                                            0.1%
+2026-10-28T02:54:43.7436550Z                                                                            0.3%
+2026-10-28T02:54:43.8552440Z                                                                            0.4%
+2026-10-28T02:54:43.9516970Z                                                                            0.6%
+2026-10-28T02:54:44.0509900Z                                                                            1.1%
+2026-10-28T02:54:44.1765130Z #                                                                          1.5%
+2026-10-28T02:54:44.2837020Z #                                                                          2.6%
+2026-10-28T02:54:44.3778040Z ###                                                                        4.6%
+2026-10-28T02:54:44.5006050Z ####                                                                       6.2%
+2026-10-28T02:54:44.6080680Z #######                                                                   10.4%
+2026-10-28T02:54:44.7112580Z #############                                                             18.1%
+2026-10-28T02:54:44.8341170Z #################                                                         24.4%
+2026-10-28T02:54:44.9304800Z #######################                                                   32.8%
+2026-10-28T02:54:45.0274170Z ##############################                                            42.0%
+2026-10-28T02:54:45.1518010Z ##################################                                        47.9%
+2026-10-28T02:54:45.2560230Z ########################################                                  56.5%
+2026-10-28T02:54:45.3561900Z ###############################################                           65.7%
+2026-10-28T02:54:45.4776610Z ###################################################                       71.9%
+2026-10-28T02:54:45.5776540Z #########################################################                 80.2%
+2026-10-28T02:54:45.6823430Z ###############################################################           88.6%
+2026-10-28T02:54:45.7368920Z ####################################################################      94.9%
+2026-10-28T02:54:45.7372170Z ######################################################################## 100.0%
+2026-10-28T02:54:46.3389700Z #=#=#                                                                          
+2026-10-28T02:54:46.4748820Z ##O#-#                                                                         
+2026-10-28T02:54:46.4848360Z 
+2026-10-28T02:54:46.6131260Z #                                                                          1.4%
+2026-10-28T02:54:46.7550510Z #####                                                                      7.6%
+2026-10-28T02:54:46.8939730Z ##################                                                        26.1%
+2026-10-28T02:54:46.8964130Z ######################################################################## 100.0%
+2026-10-28T02:54:47.1939660Z PHP version 8.4.12 (/Users/runner/gd-php/spc-arm64/bin/php)
+2026-10-28T02:54:47.1940940Z Run the "diagnose" command to get more detailed diagnostics output.
+2026-10-28T02:54:49.8434210Z      _        _   _                 _
+2026-10-28T02:54:49.8434940Z  ___| |_ __ _| |_(_) ___      _ __ | |__  _ __
+2026-10-28T02:54:49.8435430Z / __| __/ _` | __| |/ __|____| '_ \| '_ \| '_ \
+2026-10-28T02:54:49.8435730Z \__ \ || (_| | |_| | (_|_____| |_) | | | | |_) |
+2026-10-28T02:54:49.8437000Z |___/\__\__,_|\__|_|\___|    | .__/|_| |_| .__/   v2.8.5
+2026-10-28T02:54:49.8437380Z                              |_|         |_|
+2026-10-28T02:54:49.8548280Z Checking if current OS are supported ... Darwin arm64, supported
+2026-10-28T02:54:49.8620340Z Checking if homebrew has installed ... [32m✓[0m
+2026-10-28T02:54:49.8621160Z Checking if pkg-config is installed or built ... pkg-config is not installed
+2026-10-28T02:54:49.8625650Z Automatically fixing install-pkgconfig ...
+2026-10-28T02:54:49.9436790Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:54:49.9464230Z [93m[02:54:49] [W] Download package pkg-config-aarch64-macos failed: Download failed: Failed to fetch "https://api.github.com/repos/static-php/static-php-cli-hosted/releases"[0m
+2026-10-28T02:54:49.9466870Z [93m[02:54:49] [W] No alternative package found for pkg-config-aarch64-macos, using default mirror.[0m
+2026-10-28T02:54:51.5119730Z [32m[02:54:51] [I] Extracting pkg-config-aarch64-macos package to /Users/runner/gd-php/spc-arm64/pkgroot/aarch64-darwin/pkg-config-aarch64-macos ...[0m
+2026-10-28T02:54:51.5410840Z Fix applied successfully!
+2026-10-28T02:54:51.5568720Z Checking if pkg-config is working ... 0.29.2
+2026-10-28T02:54:51.5600050Z Checking if necessary tools are installed ... [32m✓[0m
+2026-10-28T02:54:52.5204570Z Checking if bison version is 3.0 or later ... bison is not installed or too old
+2026-10-28T02:54:52.5205660Z Automatically fixing build-tools ...
+2026-10-28T02:54:52.5206570Z [32m[02:54:52] [I] [33m[EXEC] [0m[32mbrew install --formula 'bison'[0m[0m
+2026-10-28T02:54:53.7501570Z [32m==>[0m [1mDownloading bottle manifests[0m
+2026-10-28T02:54:53.7696430Z ✔︎ Bottle Manifest bison (3.8.2)
+2026-10-28T02:54:53.7796580Z [34m==>[0m [1mWould install 1 formula:[0m
+2026-10-28T02:54:53.7899570Z bison
+2026-10-28T02:54:53.7999910Z [32m==>[0m [1mFetching downloads for: [32mbison[39m[0m
+2026-10-28T02:54:54.1585520Z ✔︎ Bottle bison (3.8.2)
+2026-10-28T02:54:54.2030410Z [34m==>[0m [1mPouring bison--3.8.2.arm64_sonoma.bottle.tar.gz[0m
+2026-10-28T02:54:54.3205590Z 🍺  /opt/homebrew/Cellar/bison/3.8.2: 99 files, 3.9MB
+2026-10-28T02:54:54.3207160Z [32m==>[0m [1mCaveats[0m
+2026-10-28T02:54:54.3207770Z [34m==>[0m [1mbison[0m
+2026-10-28T02:54:54.3208220Z bison is keg-only, which means it was not symlinked into /opt/homebrew,
+2026-10-28T02:54:54.3208970Z because macOS already provides this software and installing another version in
+2026-10-28T02:54:54.3209480Z parallel can cause all kinds of trouble.
+2026-10-28T02:54:54.3209630Z 
+2026-10-28T02:54:54.3209820Z If you need to have bison first in your PATH, run:
+2026-10-28T02:54:54.3210390Z   echo 'export PATH="/opt/homebrew/opt/bison/bin:$PATH"' >> /Users/runner/.bash_profile
+2026-10-28T02:54:54.3210730Z 
+2026-10-28T02:54:54.3210920Z For compilers to find bison you may need to set:
+2026-10-28T02:54:54.3211300Z   export LDFLAGS="-L/opt/homebrew/opt/bison/lib"
+2026-10-28T02:54:54.3277220Z Fix applied successfully!
+2026-10-28T02:54:54.3324600Z Checking if re2c version >= 1.0.3 ... 4.6
+2026-10-28T02:54:54.3325140Z Doctor check complete !
+2026-10-28T02:54:54.4995130Z      _        _   _                 _
+2026-10-28T02:54:54.4995750Z  ___| |_ __ _| |_(_) ___      _ __ | |__  _ __
+2026-10-28T02:54:54.4996460Z / __| __/ _` | __| |/ __|____| '_ \| '_ \| '_ \
+2026-10-28T02:54:54.4997000Z \__ \ || (_| | |_| | (_|_____| |_) | | | | |_) |
+2026-10-28T02:54:54.4998940Z |___/\__\__,_|\__|_|\___|    | .__/|_| |_| .__/   v2.8.5
+2026-10-28T02:54:54.4999940Z                              |_|         |_|
+2026-10-28T02:54:54.5085270Z [32m[02:54:54] [I] [1/10] Downloading source micro[0m
+2026-10-28T02:54:55.2723280Z [32m[02:54:55] [I] [2/10] Downloading source libiconv[0m
+2026-10-28T02:54:56.4979800Z [32m[02:54:56] [I] [3/10] Downloading source xz[0m
+2026-10-28T02:54:56.5674710Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:54:56.5690680Z [93m[02:54:56] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/tukaani-project/xz/releases"[0m
+2026-10-28T02:54:56.5692360Z [93m[02:54:56] [W] No alternative sources found for xz, using default alternative source[0m
+2026-10-28T02:54:58.5012280Z [32m[02:54:58] [I] [4/10] Downloading source zlib[0m
+2026-10-28T02:54:58.5925860Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:54:58.5949600Z [93m[02:54:58] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/madler/zlib/releases"[0m
+2026-10-28T02:54:58.5955990Z [93m[02:54:58] [W] No alternative sources found for zlib, using default alternative source[0m
+2026-10-28T02:55:00.6133310Z [32m[02:55:00] [I] [5/10] Downloading source libxml2[0m
+2026-10-28T02:55:00.7076080Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:55:00.7077380Z [93m[02:55:00] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/GNOME/libxml2/tags"[0m
+2026-10-28T02:55:00.7245850Z [93m[02:55:00] [W] No alternative sources found for libxml2, using default alternative source[0m
+2026-10-28T02:55:03.1203530Z [32m[02:55:03] [I] [6/10] Downloading source frankenphp[0m
+2026-10-28T02:55:03.2003620Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:55:03.2004450Z [93m[02:55:03] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/php/frankenphp/releases"[0m
+2026-10-28T02:55:03.2005330Z [93m[02:55:03] [W] No alternative sources found for frankenphp, using default alternative source[0m
+2026-10-28T02:55:05.4165540Z [32m[02:55:05] [I] [7/10] Downloading source brotli[0m
+2026-10-28T02:55:05.4919670Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:55:05.4930240Z [93m[02:55:05] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/google/brotli/tags"[0m
+2026-10-28T02:55:05.4931430Z [93m[02:55:05] [W] No alternative sources found for brotli, using default alternative source[0m
+2026-10-28T02:55:07.2896520Z [32m[02:55:07] [I] [8/10] Downloading source watcher[0m
+2026-10-28T02:55:07.3745030Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:55:07.3746010Z [93m[02:55:07] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/e-dant/watcher/releases"[0m
+2026-10-28T02:55:07.3848130Z [93m[02:55:07] [W] No alternative sources found for watcher, using default alternative source[0m
+2026-10-28T02:55:08.9833850Z [32m[02:55:08] [I] [9/10] Downloading source php-src[0m
+2026-10-28T02:55:09.4936530Z [32m[02:55:09] [I] [10/10] Downloading source openssl[0m
+2026-10-28T02:55:09.5559470Z curl: (56) The requested URL returned error: 403
+2026-10-28T02:55:09.5570570Z [93m[02:55:09] [W] Download failed: Download failed: Failed to fetch "https://api.github.com/repos/openssl/openssl/releases"[0m
+2026-10-28T02:55:09.5571600Z [36m[02:55:09] [N] Trying to download alternative sources for openssl[0m
+2026-10-28T02:55:09.7511420Z [93m[02:55:09] [W] Deleting download file: [0m
+2026-10-28T02:55:09.7513940Z [93m[02:55:09] [W] PHP Warning: unlink(/Users/runner/gd-php/spc-arm64/downloads/): Operation not permitted in /Users/runner/gd-php/spc-arm64/src/SPC/store/Downloader.php on 706[0m
+2026-10-28T02:55:09.7525880Z [31m✗ Download failed: Download failed: SPC\store\Downloader::downloadFile(): Argument #3 ($filename) must be of type string, false given, called in /Users/runner/gd-php/spc-arm64/src/SPC/store/Downloader.php on line 656[0m
+2026-10-28T02:55:09.7528170Z [31m----------------------------------------[0m
+2026-10-28T02:55:09.7528690Z [31m[0m
+2026-10-28T02:55:09.7528980Z [31m[0m
+2026-10-28T02:55:09.7529400Z [31m----------------------------------------[0m
+2026-10-28T02:55:09.7529920Z [31m[0m
+2026-10-28T02:55:09.7530730Z [31m⚠ The [36mconsole output log[0m[31m is saved in [0m[m/Users/runner/gd-php/spc-arm64/log/spc.output.log[0m[0m
+2026-10-28T02:55:09.7531490Z [31m⚠ If you want to see more details in console, use `--debug` option.[0m
+2026-10-28T02:55:09.8263140Z ##[error]Process completed with exit code 1.
+2026-10-28T02:55:09.8476480Z Post job cleanup.
+2026-10-28T02:55:09.9732840Z [command]/opt/homebrew/bin/git version
+2026-10-28T02:55:09.9797180Z git version 2.55.0
+2026-10-28T02:55:09.9816970Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/9e07f4e2-ced2-4ded-a175-8e914a79651b/.gitconfig'
+2026-10-28T02:55:09.9824550Z Temporarily overriding HOME='/Users/runner/work/_temp/9e07f4e2-ced2-4ded-a175-8e914a79651b' before making global git config changes
+2026-10-28T02:55:09.9825540Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T02:55:09.9828560Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/garble-php-build/garble-php-build
+2026-10-28T02:55:09.9889220Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T02:55:09.9945760Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T02:55:10.0871460Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T02:55:10.0920900Z http.https://github.com/.extraheader
+2026-10-28T02:55:10.0938100Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-28T02:55:10.1054280Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T02:55:10.2523100Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-28T02:55:10.2846510Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-28T02:55:10.3720840Z Cleaning up orphan processes
+2026-10-28T02:55:10.5600720Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

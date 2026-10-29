@@ -1,0 +1,61 @@
+# The Mac bundle's PHP, one arch a run (docs/ref/garble036/PLAN.md §3.2; before it docs/ref/macarm/PLAN.md §3.1): the same
+# tools/mac_php_build.sh as the Mac mini, from php.net's source, on a GitHub Actions runner of that arch (static-php-cli
+# builds only for the machine it runs on), then the binary checked where it can run: arch, linked libraries, minos,
+# version, every extension the script builds (its EXTS, intl included), TLS. The binary and a SHA-256 line are the run's
+# artifact; tools/mac_php.lock pins that SHA-256. Copied as .github/workflows/mac-php.yml into the build repo, beside
+# mac_php_build.sh.
+name: mac-php
+on:
+  workflow_dispatch:
+    inputs:
+      arch:
+        description: arm64 or x86_64
+        default: arm64
+      series:
+        description: PHP series
+        default: "8.4"
+permissions:
+  contents: read
+jobs:
+  build:
+    # (macos-15: Apple Silicon; macos-15-intel: Intel. macos-13 is retired and macos-14 deprecated)
+    runs-on: ${{ inputs.arch == 'x86_64' && 'macos-15-intel' || 'macos-15' }}
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: build tools
+        run: brew install re2c autoconf automake xz cmake libtool
+      - name: build
+        env:
+          # (static-php-cli reads library releases through GitHub's API: anonymous calls from a runner get 403)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          test "$(uname -m)" = "${{ inputs.arch }}"
+          bash ./mac_php_build.sh "${{ inputs.arch }}" "${{ inputs.series }}"
+      - name: check
+        run: |
+          set -euo pipefail
+          ARCH="${{ inputs.arch }}"
+          BIN="$(ls ~/gd-php/out/php-*-macos-$ARCH)"
+          test "$(lipo -archs "$BIN")" = "$ARCH"
+          LIBS="$(otool -L "$BIN" | tail -n +2 | awk '{print $1}' | grep -v -E '^(/usr/lib/|/System/)' || true)"
+          test -z "$LIBS"
+          MINOS="$(otool -l "$BIN" | awk '/LC_BUILD_VERSION/{f=1} f&&/minos/{print $2; exit}')"
+          test "$(printf '%s\n11.0\n' "$MINOS" | sort -V | tail -1)" = 11.0
+          "$BIN" -v
+          EXTS="$(sed -n 's/^EXTS="\([^"]*\)".*/\1/p' mac_php_build.sh)"
+          test -n "$EXTS"
+          for e in $(echo "$EXTS" | tr ',' ' '); do
+            "$BIN" -r "exit(extension_loaded('$e') ? 0 : 1);" || { echo "no $e"; exit 1; }
+          done
+          echo "extensions ok: $EXTS"
+          "$BIN" -r 'echo "intl ", INTL_ICU_VERSION, ", grapheme_strlen: ", grapheme_strlen("e\u{301}🇨🇦"), PHP_EOL;'
+          curl -fsSL -o cacert.pem https://curl.se/ca/cacert.pem
+          "$BIN" -d openssl.cafile="$PWD/cacert.pem" -r '$c = stream_socket_client("ssl://garble.bot:443", $n, $s, 15, STREAM_CLIENT_CONNECT, stream_context_create(["ssl" => ["verify_peer" => true]])); exit($c ? 0 : 1);'
+          mkdir out && cp "$BIN" out/
+          (cd out && shasum -a 256 * > SHA256.txt && cat SHA256.txt)
+          cat ~/gd-php/out/build.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: php-macos-${{ inputs.arch }}
+          path: out/

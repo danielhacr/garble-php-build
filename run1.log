@@ -1,0 +1,602 @@
+﻿2026-10-28T02:48:41.7470730Z Current runner version: '2.338.0'
+2026-10-28T02:48:41.7488460Z ##[group]Runner Image Provisioner
+2026-10-28T02:48:41.7488970Z Hosted Compute Agent
+2026-10-28T02:48:41.7489450Z Version: 20260828.587
+2026-10-28T02:48:41.7489880Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-28T02:48:41.7490340Z Build Date: 2026-08-28T16:44:25Z
+2026-10-28T02:48:41.7490760Z Worker ID: {0a651d0b-4e0d-48f2-a313-12a8f0031d7c}
+2026-10-28T02:48:41.7491210Z Azure Region: westus
+2026-10-28T02:48:41.7491580Z ##[endgroup]
+2026-10-28T02:48:41.7492500Z ##[group]Operating System
+2026-10-28T02:48:41.7492880Z macOS
+2026-10-28T02:48:41.7493210Z 14.8.9
+2026-10-28T02:48:41.7493530Z 23J631
+2026-10-28T02:48:41.7493860Z ##[endgroup]
+2026-10-28T02:48:41.7494220Z ##[group]Runner Image
+2026-10-28T02:48:41.7494610Z Image: macos-14-arm64
+2026-10-28T02:48:41.7495000Z Version: 20260831.0302.1
+2026-10-28T02:48:41.7496200Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260831.0302/images/macos/macos-14-arm64-Readme.md
+2026-10-28T02:48:41.7497240Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260831.0302
+2026-10-28T02:48:41.7497900Z ##[endgroup]
+2026-10-28T02:48:41.7498640Z ##[group]GITHUB_TOKEN Permissions
+2026-10-28T02:48:41.7499770Z Contents: read
+2026-10-28T02:48:41.7500130Z Metadata: read
+2026-10-28T02:48:41.7500480Z ##[endgroup]
+2026-10-28T02:48:41.7501870Z Secret source: Actions
+2026-10-28T02:48:41.7502440Z Cache mode: write
+2026-10-28T02:48:41.7502950Z Prepare workflow directory
+2026-10-28T02:48:41.7803980Z Prepare all required actions
+2026-10-28T02:48:41.7848620Z Getting action download info
+2026-10-28T02:48:42.0541850Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-28T02:48:42.3674790Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-28T02:48:42.6127030Z Complete job name: build
+2026-10-28T02:48:42.6921710Z ##[group]Run actions/checkout@v4
+2026-10-28T02:48:42.6922480Z with:
+2026-10-28T02:48:42.6922870Z   repository: danielhacr/garble-php-build
+2026-10-28T02:48:42.6926260Z   token: ***
+2026-10-28T02:48:42.6926620Z   ssh-strict: true
+2026-10-28T02:48:42.6926960Z   ssh-user: git
+2026-10-28T02:48:42.6927310Z   persist-credentials: true
+2026-10-28T02:48:42.6927780Z   clean: true
+2026-10-28T02:48:42.6928120Z   sparse-checkout-cone-mode: true
+2026-10-28T02:48:42.6928520Z   fetch-depth: 1
+2026-10-28T02:48:42.6928850Z   fetch-tags: false
+2026-10-28T02:48:42.6929200Z   show-progress: true
+2026-10-28T02:48:42.6929540Z   lfs: false
+2026-10-28T02:48:42.6929860Z   submodules: false
+2026-10-28T02:48:42.6930200Z   set-safe-directory: true
+2026-10-28T02:48:42.6930590Z   allow-unsafe-pr-checkout: false
+2026-10-28T02:48:42.6931460Z ##[endgroup]
+2026-10-28T02:48:43.2541150Z Syncing repository: danielhacr/garble-php-build
+2026-10-28T02:48:43.2543820Z ##[group]Getting Git version info
+2026-10-28T02:48:43.2544660Z Working directory is '/Users/runner/work/garble-php-build/garble-php-build'
+2026-10-28T02:48:43.2546390Z [command]/opt/homebrew/bin/git version
+2026-10-28T02:48:43.2834630Z git version 2.55.0
+2026-10-28T02:48:43.2864270Z ##[endgroup]
+2026-10-28T02:48:43.2884390Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/fcdeb9ac-c36c-4317-8a25-1b4b317854c7/.gitconfig'
+2026-10-28T02:48:43.2887870Z Temporarily overriding HOME='/Users/runner/work/_temp/fcdeb9ac-c36c-4317-8a25-1b4b317854c7' before making global git config changes
+2026-10-28T02:48:43.2891760Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T02:48:43.2892960Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/garble-php-build/garble-php-build
+2026-10-28T02:48:43.3018240Z Deleting the contents of '/Users/runner/work/garble-php-build/garble-php-build'
+2026-10-28T02:48:43.3026290Z ##[group]Initializing the repository
+2026-10-28T02:48:43.3033440Z [command]/opt/homebrew/bin/git init /Users/runner/work/garble-php-build/garble-php-build
+2026-10-28T02:48:43.4001690Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-28T02:48:43.4011020Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-28T02:48:43.4012280Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-28T02:48:43.4013010Z hint: call:
+2026-10-28T02:48:43.4013430Z hint:
+2026-10-28T02:48:43.4013910Z hint: 	git config --global init.defaultBranch <name>
+2026-10-28T02:48:43.4030710Z hint:
+2026-10-28T02:48:43.4046820Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-28T02:48:43.4047710Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-28T02:48:43.4048340Z hint:
+2026-10-28T02:48:43.4048780Z hint: 	git branch -m <name>
+2026-10-28T02:48:43.4049220Z hint:
+2026-10-28T02:48:43.4049900Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-28T02:48:43.4051420Z Initialized empty Git repository in /Users/runner/work/garble-php-build/garble-php-build/.git/
+2026-10-28T02:48:43.4054220Z [command]/opt/homebrew/bin/git remote add origin https://github.com/danielhacr/garble-php-build
+2026-10-28T02:48:43.4098870Z ##[endgroup]
+2026-10-28T02:48:43.4101040Z ##[group]Disabling automatic garbage collection
+2026-10-28T02:48:43.4104680Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-28T02:48:43.4173270Z ##[endgroup]
+2026-10-28T02:48:43.4175770Z ##[group]Setting up auth
+2026-10-28T02:48:43.4176470Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T02:48:43.4246450Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T02:48:43.6236800Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T02:48:43.6245230Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T02:48:43.7057670Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-28T02:48:43.7110950Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-28T02:48:43.8014050Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-28T02:48:43.8055530Z ##[endgroup]
+2026-10-28T02:48:43.8058660Z ##[group]Fetching the repository
+2026-10-28T02:48:43.8070610Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9bbcf12b6d0457e42762c952e0815caae242a8fc:refs/remotes/origin/main
+2026-10-28T02:48:44.2144230Z From https://github.com/danielhacr/garble-php-build
+2026-10-28T02:48:44.2158260Z  * [new ref]         9bbcf12b6d0457e42762c952e0815caae242a8fc -> origin/main
+2026-10-28T02:48:44.2164500Z ##[endgroup]
+2026-10-28T02:48:44.2167250Z ##[group]Determining the checkout info
+2026-10-28T02:48:44.2182440Z ##[endgroup]
+2026-10-28T02:48:44.2183590Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-28T02:48:44.2287730Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-28T02:48:44.2358990Z ##[group]Checking out the ref
+2026-10-28T02:48:44.2360020Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-28T02:48:44.2480500Z Switched to a new branch 'main'
+2026-10-28T02:48:44.2488590Z branch 'main' set up to track 'origin/main'.
+2026-10-28T02:48:44.2491360Z ##[endgroup]
+2026-10-28T02:48:44.2563260Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-28T02:48:44.2616790Z 9bbcf12b6d0457e42762c952e0815caae242a8fc
+2026-10-28T02:48:44.2895640Z ##[group]Run test "$(uname -m)" = arm64
+2026-10-28T02:48:44.2897080Z [36;1mtest "$(uname -m)" = arm64[0m
+2026-10-28T02:48:44.2897840Z [36;1mbash ./mac_php_build.sh arm64 "8.4"[0m
+2026-10-28T02:48:44.2968090Z shell: /bin/bash -e {0}
+2026-10-28T02:48:44.2968980Z ##[endgroup]
+2026-10-28T02:48:45.3781260Z #=#=#                                                                          
+2026-10-28T02:48:45.5996180Z ##O#-#                                                                         
+2026-10-28T02:48:45.7202250Z ##O=#  #                                                                       
+2026-10-28T02:48:45.8308610Z #=#=-#  #                                                                      
+2026-10-28T02:48:45.9493330Z -#O#- #   #                                                                    
+2026-10-28T02:48:45.9494960Z 
+2026-10-28T02:48:46.0675050Z                                                                            0.1%
+2026-10-28T02:48:46.1859670Z                                                                            0.3%
+2026-10-28T02:48:46.3043600Z                                                                            0.6%
+2026-10-28T02:48:46.4252170Z                                                                            1.3%
+2026-10-28T02:48:46.5439450Z #                                                                          2.6%
+2026-10-28T02:48:46.6621280Z ###                                                                        5.2%
+2026-10-28T02:48:46.7858120Z #######                                                                   10.3%
+2026-10-28T02:48:46.9054480Z ###############                                                           20.9%
+2026-10-28T02:48:47.0249850Z #######################                                                   32.6%
+2026-10-28T02:48:47.1437480Z ################################                                          44.6%
+2026-10-28T02:48:47.2440020Z ########################################                                  56.5%
+2026-10-28T02:48:47.3486110Z ################################################                          67.7%
+2026-10-28T02:48:47.4519900Z ######################################################                    75.5%
+2026-10-28T02:48:47.5540750Z ##############################################################            86.6%
+2026-10-28T02:48:47.5949120Z #####################################################################     96.3%
+2026-10-28T02:48:47.5949840Z ######################################################################## 100.0%
+2026-10-28T02:48:48.0548040Z #=#=#                                                                          
+2026-10-28T02:48:48.0704050Z 
+2026-10-28T02:48:48.1753290Z                                                                            0.2%
+2026-10-28T02:48:48.2761550Z ##                                                                         3.5%
+2026-10-28T02:48:48.3763900Z ###########                                                               16.2%
+2026-10-28T02:48:48.4027580Z ##########################################################                81.8%
+2026-10-28T02:48:48.4034580Z ######################################################################## 100.0%
+2026-10-28T02:48:50.3086670Z PHP version 8.4.12 (/Users/runner/gd-php/spc-arm64/bin/php)
+2026-10-28T02:48:50.3114270Z Run the "diagnose" command to get more detailed diagnostics output.
+2026-10-28T02:48:53.1792060Z      _        _   _                 _
+2026-10-28T02:48:53.1792860Z  ___| |_ __ _| |_(_) ___      _ __ | |__  _ __
+2026-10-28T02:48:53.1793480Z / __| __/ _` | __| |/ __|____| '_ \| '_ \| '_ \
+2026-10-28T02:48:53.1793920Z \__ \ || (_| | |_| | (_|_____| |_) | | | | |_) |
+2026-10-28T02:48:53.1794350Z |___/\__\__,_|\__|_|\___|    | .__/|_| |_| .__/   v2.8.5
+2026-10-28T02:48:53.1794720Z                              |_|         |_|
+2026-10-28T02:48:53.1880240Z Checking if current OS are supported ... Darwin arm64, supported
+2026-10-28T02:48:53.1884090Z Checking if homebrew has installed ... Homebrew is not installed
+2026-10-28T02:48:53.1890480Z Automatically fixing brew ...
+2026-10-28T02:48:53.1897660Z [32m[02:48:53] [I] [33m[EXEC] [0m[32m/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"[0m[0m
+2026-10-28T02:48:53.2694410Z Warning: Running in non-interactive mode because `$CI` is set.
+2026-10-28T02:48:53.2806250Z ==> Checking for `sudo` access...
+2026-10-28T02:48:53.3360340Z ==> You are using macOS 14.8.
+2026-10-28T02:48:53.3364390Z ==> We (and Apple) do not provide support for this old version.
+2026-10-28T02:48:53.3423110Z This installation may not succeed.
+2026-10-28T02:48:53.3424120Z After installation, you will encounter build failures with some formulae.
+2026-10-28T02:48:53.3424630Z Please create pull requests instead of asking for help on Homebrew's GitHub,
+2026-10-28T02:48:53.3425180Z Twitter or any other official channels. You are responsible for resolving any
+2026-10-28T02:48:53.3425690Z issues you experience while you are running this old version.
+2026-10-28T02:48:53.3426230Z 
+2026-10-28T02:48:53.3435460Z ==> This script will install:
+2026-10-28T02:48:53.3436010Z /opt/homebrew/bin/brew
+2026-10-28T02:48:53.3436450Z /opt/homebrew/share/doc/homebrew
+2026-10-28T02:48:53.3436900Z /opt/homebrew/share/man/man1/brew.1
+2026-10-28T02:48:53.3437560Z /opt/homebrew/share/zsh/site-functions/_brew
+2026-10-28T02:48:53.3438500Z /opt/homebrew/etc/bash_completion.d/brew
+2026-10-28T02:48:53.3438830Z /opt/homebrew
+2026-10-28T02:48:53.3439140Z /etc/paths.d/homebrew
+2026-10-28T02:49:09.1882630Z ==> /usr/bin/sudo /usr/sbin/chown -R runner:admin /opt/homebrew
+2026-10-28T02:49:21.2111460Z ==> Found Git: /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/git
+2026-10-28T02:49:21.2127180Z ==> Downloading and installing Homebrew...
+2026-10-28T02:49:24.6438160Z ==> /usr/bin/sudo /usr/bin/install -o root -g wheel -m 0644 /var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/tmp.ioWrdFFl9A /etc/paths.d/homebrew
+2026-10-28T02:49:28.5672210Z [34m==>[0m [1mUpdating Homebrew...[0m
+2026-10-28T02:49:51.8141250Z To restore the stashed changes to /opt/homebrew/Library/Taps/homebrew/homebrew-core, run:
+2026-10-28T02:49:51.8244930Z   cd /opt/homebrew/Library/Taps/homebrew/homebrew-core && git stash pop
+2026-10-28T02:49:52.6786700Z [34m==>[0m [1mDownloading https://ghcr.io/v2/homebrew/core/portable-ruby/blobs/sha256:43ff285a82f48c84a06d0676a3800815a19d290d32e44182ddd7a6e95478e18e[0m
+2026-10-28T02:49:52.8890760Z 
+2026-10-28T02:49:52.9926100Z #=#=#                                                                           
+2026-10-28T02:49:53.0197340Z ####################################                                       50.2%
+2026-10-28T02:49:53.0198620Z ######################################################################### 100.0%
+2026-10-28T02:49:53.1439620Z [34m==>[0m [1mPouring portable-ruby-4.0.9.arm64_big_sur.bottle.tar.gz[0m
+2026-10-28T02:49:55.0363960Z Updated 3 taps (azure/bicep, homebrew/core and homebrew/cask).
+2026-10-28T02:49:55.0418920Z [34m==>[0m [1mazure-cli has been moved to homebrew/cask.[0m
+2026-10-28T02:49:55.0422940Z [34m==>[0m [1mbrew unlink azure-cli[0m
+2026-10-28T02:49:55.6265450Z ##[warning]Treating azure-cli as a formula. For the cask, use homebrew/cask/azure-cli or specify the `--cask` flag. To silence this message, use the `--formula` flag.
+2026-10-28T02:49:55.6614640Z Unlinking /opt/homebrew/Cellar/azure-cli/2.89.1... 4 symlinks removed.
+2026-10-28T02:49:55.6655530Z [34m==>[0m [1mbrew cleanup[0m
+2026-10-28T02:49:56.3175050Z ##[warning]Skipping ant: most recent version 1.10.18 not installed
+2026-10-28T02:49:56.3214340Z Removing: /Users/runner/Library/Caches/Homebrew/ant--1.10.17... (0B)
+2026-10-28T02:49:56.3216320Z Removing: /Users/runner/Library/Caches/Homebrew/ant_bottle_manifest--1.10.17... (0B)
+2026-10-28T02:49:56.3229090Z ##[warning]Skipping aria2: most recent version 1.37.0_3 not installed
+2026-10-28T02:49:56.3253200Z Removing: /Users/runner/Library/Caches/Homebrew/aria2--1.37.0_2... (0B)
+2026-10-28T02:49:56.3303380Z Removing: /Users/runner/Library/Caches/Homebrew/aria2_bottle_manifest--1.37.0_2... (0B)
+2026-10-28T02:49:56.3313620Z ##[warning]Skipping aws-sam-cli: most recent version 1.170.0_1 not installed
+2026-10-28T02:49:56.3314730Z Removing: /Users/runner/Library/Caches/Homebrew/aws-sam-cli--1.165.0... (0B)
+2026-10-28T02:49:56.3315260Z Removing: /Users/runner/Library/Caches/Homebrew/aws-sam-cli_bottle_manifest--1.165.0... (0B)
+2026-10-28T02:49:56.3315820Z Removing: /Users/runner/Library/Caches/Homebrew/azure-cli--2.89.1... (0B)
+2026-10-28T02:49:56.3316400Z Removing: /Users/runner/Library/Caches/Homebrew/azure-cli_bottle_manifest--2.89.1... (0B)
+2026-10-28T02:49:56.3321930Z ##[warning]Skipping bazelisk: most recent version 1.30.0 not installed
+2026-10-28T02:49:56.3324210Z Removing: /Users/runner/Library/Caches/Homebrew/bazelisk--1.29.0... (0B)
+2026-10-28T02:49:56.3325690Z Removing: /Users/runner/Library/Caches/Homebrew/bazelisk_bottle_manifest--1.29.0... (0B)
+2026-10-28T02:49:56.3328280Z ##[warning]Skipping azure/bicep/bicep: most recent version 0.48.1 not installed
+2026-10-28T02:49:56.3330290Z Removing: /Users/runner/Library/Caches/Homebrew/bicep--0.46.1... (0B)
+2026-10-28T02:49:56.3332500Z ##[warning]Skipping brotli: most recent version 1.2.1 not installed
+2026-10-28T02:49:56.3334610Z Removing: /Users/runner/Library/Caches/Homebrew/brotli--1.2.0... (0B)
+2026-10-28T02:49:56.3335690Z Removing: /Users/runner/Library/Caches/Homebrew/brotli_bottle_manifest--1.2.0... (0B)
+2026-10-28T02:49:56.3338270Z ##[warning]Skipping c-ares: most recent version 1.34.9 not installed
+2026-10-28T02:49:56.3341810Z Removing: /Users/runner/Library/Caches/Homebrew/c-ares--1.34.8... (0B)
+2026-10-28T02:49:56.3342380Z Removing: /Users/runner/Library/Caches/Homebrew/c-ares_bottle_manifest--1.34.8... (0B)
+2026-10-28T02:49:56.3343530Z ##[warning]Skipping ca-certificates: most recent version 2026-10-20 not installed
+2026-10-28T02:49:56.3344410Z Removing: /Users/runner/Library/Caches/Homebrew/ca-certificates--2026-08-13... (0B)
+2026-10-28T02:49:56.3344940Z Removing: /Users/runner/Library/Caches/Homebrew/ca-certificates_bottle_manifest--2026-08-13-1... (0B)
+2026-10-28T02:49:56.3345890Z ##[warning]Skipping cairo: most recent version 1.18.6 not installed
+2026-10-28T02:49:56.3346640Z Removing: /Users/runner/Library/Caches/Homebrew/cairo--1.18.4... (0B)
+2026-10-28T02:49:56.3347060Z Removing: /Users/runner/Library/Caches/Homebrew/cairo_bottle_manifest--1.18.4-2... (0B)
+2026-10-28T02:49:56.3347570Z Removing: /Users/runner/Library/Caches/Homebrew/carthage--0.40.0... (0B)
+2026-10-28T02:49:56.3348040Z Removing: /Users/runner/Library/Caches/Homebrew/carthage_bottle_manifest--0.40.0... (0B)
+2026-10-28T02:49:56.3348880Z ##[warning]Skipping certifi: most recent version 2026.10.23 not installed
+2026-10-28T02:49:56.3349820Z Removing: /Users/runner/Library/Caches/Homebrew/certifi--2026.7.22... (0B)
+2026-10-28T02:49:56.3350380Z Removing: /Users/runner/Library/Caches/Homebrew/certifi_bottle_manifest--2026.7.22... (0B)
+2026-10-28T02:49:56.3353570Z ##[warning]Skipping cffi: most recent version 2.1.1_1 not installed
+2026-10-28T02:49:56.3357380Z Removing: /Users/runner/Library/Caches/Homebrew/cffi--2.1.1... (0B)
+2026-10-28T02:49:56.3360200Z Removing: /Users/runner/Library/Caches/Homebrew/cffi_bottle_manifest--2.1.1... (0B)
+2026-10-28T02:49:56.3361930Z ##[warning]Skipping cmake: most recent version 4.4.4 not installed
+2026-10-28T02:49:56.3362830Z Removing: /Users/runner/Library/Caches/Homebrew/cmake--4.4.3... (0B)
+2026-10-28T02:49:56.3363330Z Removing: /Users/runner/Library/Caches/Homebrew/cmake_bottle_manifest--4.4.3... (0B)
+2026-10-28T02:49:56.3364810Z ##[warning]Skipping cryptography: most recent version 50.0.2_2 not installed
+2026-10-28T02:49:56.3365620Z Removing: /Users/runner/Library/Caches/Homebrew/cryptography--50.0.1... (0B)
+2026-10-28T02:49:56.3366200Z Removing: /Users/runner/Library/Caches/Homebrew/cryptography_bottle_manifest--50.0.1... (0B)
+2026-10-28T02:49:56.3366980Z ##[warning]Skipping curl: most recent version 8.23.0 not installed
+2026-10-28T02:49:56.3368530Z Removing: /Users/runner/Library/Caches/Homebrew/curl--8.21.0... (0B)
+2026-10-28T02:49:56.3369330Z Removing: /Users/runner/Library/Caches/Homebrew/curl_bottle_manifest--8.21.0-1... (0B)
+2026-10-28T02:49:56.3370220Z ##[warning]Skipping expat: most recent version 2.9.0 not installed
+2026-10-28T02:49:56.3371000Z Removing: /Users/runner/Library/Caches/Homebrew/expat--2.8.3... (0B)
+2026-10-28T02:49:56.3371550Z Removing: /Users/runner/Library/Caches/Homebrew/expat_bottle_manifest--2.8.3... (0B)
+2026-10-28T02:49:56.3373110Z Removing: /Users/runner/Library/Caches/Homebrew/fontconfig--2.18.3... (0B)
+2026-10-28T02:49:56.3374050Z Removing: /Users/runner/Library/Caches/Homebrew/fontconfig_bottle_manifest--2.18.3... (0B)
+2026-10-28T02:49:56.3375530Z ##[warning]Skipping freetype: most recent version 2.15.0 not installed
+2026-10-28T02:49:56.3376810Z Removing: /Users/runner/Library/Caches/Homebrew/freetype--2.14.3... (0B)
+2026-10-28T02:49:56.3377330Z Removing: /Users/runner/Library/Caches/Homebrew/freetype_bottle_manifest--2.14.3... (0B)
+2026-10-28T02:49:56.3391210Z Removing: /Users/runner/Library/Caches/Homebrew/gcc@13--13.4.0... (0B)
+2026-10-28T02:49:56.3393630Z Removing: /Users/runner/Library/Caches/Homebrew/gcc@13_bottle_manifest--13.4.0-4... (0B)
+2026-10-28T02:49:56.3408890Z Removing: /Users/runner/Library/Caches/Homebrew/gcc@14--14.4.0... (0B)
+2026-10-28T02:49:56.3410740Z Removing: /Users/runner/Library/Caches/Homebrew/gcc@14_bottle_manifest--14.4.0... (0B)
+2026-10-28T02:49:56.3427390Z Removing: /Users/runner/Library/Caches/Homebrew/gcc@15--15.3.0... (0B)
+2026-10-28T02:49:56.3429510Z Removing: /Users/runner/Library/Caches/Homebrew/gcc@15_bottle_manifest--15.3.0-1... (0B)
+2026-10-28T02:49:56.3442560Z Removing: /Users/runner/Library/Caches/Homebrew/gdbm--1.26... (0B)
+2026-10-28T02:49:56.3445730Z Removing: /Users/runner/Library/Caches/Homebrew/gdbm_bottle_manifest--1.26... (0B)
+2026-10-28T02:49:56.3447820Z Removing: /Users/runner/Library/Caches/Homebrew/geckodriver--0.37.1... (0B)
+2026-10-28T02:49:56.3449780Z Removing: /Users/runner/Library/Caches/Homebrew/geckodriver_bottle_manifest--0.37.1... (0B)
+2026-10-28T02:49:56.3453060Z Removing: /Users/runner/Library/Caches/Homebrew/gettext--1.0... (0B)
+2026-10-28T02:49:56.3455460Z Removing: /Users/runner/Library/Caches/Homebrew/gettext_bottle_manifest--1.0-1... (0B)
+2026-10-28T02:49:56.3459300Z ##[warning]Skipping gh: most recent version 2.103.3 not installed
+2026-10-28T02:49:56.3461980Z Removing: /Users/runner/Library/Caches/Homebrew/gh--2.98.0... (0B)
+2026-10-28T02:49:56.3462830Z Removing: /Users/runner/Library/Caches/Homebrew/gh_bottle_manifest--2.98.0... (0B)
+2026-10-28T02:49:56.3472600Z Removing: /Users/runner/Library/Caches/Homebrew/giflib--6.1.3... (0B)
+2026-10-28T02:49:56.3474420Z Removing: /Users/runner/Library/Caches/Homebrew/giflib_bottle_manifest--6.1.3... (0B)
+2026-10-28T02:49:56.3477400Z ##[warning]Skipping git: most recent version 2.56.0_1 not installed
+2026-10-28T02:49:56.3479700Z Removing: /Users/runner/Library/Caches/Homebrew/git--2.55.0... (0B)
+2026-10-28T02:49:56.3480800Z Removing: /Users/runner/Library/Caches/Homebrew/git_bottle_manifest--2.55.0... (0B)
+2026-10-28T02:49:56.3486360Z ##[warning]Skipping git-lfs: most recent version 3.8.1 not installed
+2026-10-28T02:49:56.3491930Z Removing: /Users/runner/Library/Caches/Homebrew/git-lfs--3.8.0... (0B)
+2026-10-28T02:49:56.3494120Z Removing: /Users/runner/Library/Caches/Homebrew/git-lfs_bottle_manifest--3.8.0... (0B)
+2026-10-28T02:49:56.3502630Z ##[warning]Skipping glib: most recent version 2.90.1 not installed
+2026-10-28T02:49:56.3505080Z Removing: /Users/runner/Library/Caches/Homebrew/glib--2.88.3... (0B)
+2026-10-28T02:49:56.3507860Z Removing: /Users/runner/Library/Caches/Homebrew/glib_bottle_manifest--2.88.3-1... (0B)
+2026-10-28T02:49:56.3514150Z Removing: /Users/runner/Library/Caches/Homebrew/gmp--6.3.0... (0B)
+2026-10-28T02:49:56.3514850Z Removing: /Users/runner/Library/Caches/Homebrew/gmp_bottle_manifest--6.3.0... (0B)
+2026-10-28T02:49:56.3527850Z Removing: /Users/runner/Library/Caches/Homebrew/gnu-tar--1.35_1... (0B)
+2026-10-28T02:49:56.3530540Z Removing: /Users/runner/Library/Caches/Homebrew/gnu-tar_bottle_manifest--1.35_1... (0B)
+2026-10-28T02:49:56.3533940Z ##[warning]Skipping gnupg: most recent version 2.5.24_1 not installed
+2026-10-28T02:49:56.3536050Z Removing: /Users/runner/Library/Caches/Homebrew/gnupg--2.5.21... (0B)
+2026-10-28T02:49:56.3536640Z Removing: /Users/runner/Library/Caches/Homebrew/gnupg_bottle_manifest--2.5.21... (0B)
+2026-10-28T02:49:56.3538690Z Removing: /Users/runner/Library/Caches/Homebrew/gnutls--3.8.13_2... (0B)
+2026-10-28T02:49:56.3539490Z Removing: /Users/runner/Library/Caches/Homebrew/gnutls_bottle_manifest--3.8.13_2-1... (0B)
+2026-10-28T02:49:56.3542500Z ##[warning]Skipping gradle: most recent version 9.8.2 not installed
+2026-10-28T02:49:56.3547040Z Removing: /Users/runner/Library/Caches/Homebrew/gradle--9.7.1... (0B)
+2026-10-28T02:49:56.3548290Z Removing: /Users/runner/Library/Caches/Homebrew/gradle_bottle_manifest--9.7.1... (0B)
+2026-10-28T02:49:56.3556700Z ##[warning]Skipping gradle-completion: most recent version 9.8.0 not installed
+2026-10-28T02:49:56.3557750Z Removing: /Users/runner/Library/Caches/Homebrew/gradle-completion--9.6.1... (0B)
+2026-10-28T02:49:56.3560820Z Removing: /Users/runner/Library/Caches/Homebrew/gradle-completion_bottle_manifest--9.6.1... (0B)
+2026-10-28T02:49:56.3563590Z Removing: /Users/runner/Library/Caches/Homebrew/graphite2--1.3.15... (0B)
+2026-10-28T02:49:56.3566480Z Removing: /Users/runner/Library/Caches/Homebrew/graphite2_bottle_manifest--1.3.15... (0B)
+2026-10-28T02:49:56.3569030Z ##[warning]Skipping harfbuzz: most recent version 15.0.0_1 not installed
+2026-10-28T02:49:56.3570110Z Removing: /Users/runner/Library/Caches/Homebrew/harfbuzz--14.4.0... (0B)
+2026-10-28T02:49:56.3575310Z Removing: /Users/runner/Library/Caches/Homebrew/harfbuzz_bottle_manifest--14.4.0... (0B)
+2026-10-28T02:49:56.3579040Z ##[warning]Skipping icu4c@78: most recent version 78.3_1 not installed
+2026-10-28T02:49:56.3581400Z Removing: /Users/runner/Library/Caches/Homebrew/icu4c@78--78.3... (0B)
+2026-10-28T02:49:56.3581970Z Removing: /Users/runner/Library/Caches/Homebrew/icu4c@78_bottle_manifest--78.3... (0B)
+2026-10-28T02:49:56.3585540Z Removing: /Users/runner/Library/Caches/Homebrew/isl--0.28... (0B)
+2026-10-28T02:49:56.3586640Z Removing: /Users/runner/Library/Caches/Homebrew/isl_bottle_manifest--0.28... (0B)
+2026-10-28T02:49:56.3601310Z Removing: /Users/runner/Library/Caches/Homebrew/jpeg-turbo--3.2.0... (0B)
+2026-10-28T02:49:56.3606900Z Removing: /Users/runner/Library/Caches/Homebrew/jpeg-turbo_bottle_manifest--3.2.0... (0B)
+2026-10-28T02:49:56.3620900Z Removing: /Users/runner/Library/Caches/Homebrew/jq--1.8.2... (0B)
+2026-10-28T02:49:56.3621840Z Removing: /Users/runner/Library/Caches/Homebrew/jq_bottle_manifest--1.8.2-1... (0B)
+2026-10-28T02:49:56.3630460Z Removing: /Users/runner/Library/Caches/Homebrew/json-c--0.19... (0B)
+2026-10-28T02:49:56.3638190Z Removing: /Users/runner/Library/Caches/Homebrew/json-c_bottle_manifest--0.19... (0B)
+2026-10-28T02:49:56.3640060Z ##[warning]Skipping kotlin: most recent version 2.4.21 not installed
+2026-10-28T02:49:56.3642520Z Removing: /Users/runner/Library/Caches/Homebrew/kotlin--2.4.10... (0B)
+2026-10-28T02:49:56.3643100Z Removing: /Users/runner/Library/Caches/Homebrew/kotlin_bottle_manifest--2.4.10... (0B)
+2026-10-28T02:49:56.3649750Z ##[warning]Skipping krb5: most recent version 1.22.2_2 not installed
+2026-10-28T02:49:56.3652810Z Removing: /Users/runner/Library/Caches/Homebrew/krb5--1.22.2... (0B)
+2026-10-28T02:49:56.3659710Z Removing: /Users/runner/Library/Caches/Homebrew/krb5_bottle_manifest--1.22.2... (0B)
+2026-10-28T02:49:56.3667020Z Removing: /Users/runner/Library/Caches/Homebrew/libassuan--3.0.2... (0B)
+2026-10-28T02:49:56.3667920Z Removing: /Users/runner/Library/Caches/Homebrew/libassuan_bottle_manifest--3.0.2... (0B)
+2026-10-28T02:49:56.3677410Z ##[warning]Skipping libgcrypt: most recent version 1.12.4 not installed
+2026-10-28T02:49:56.3680680Z Removing: /Users/runner/Library/Caches/Homebrew/libgcrypt--1.12.3... (0B)
+2026-10-28T02:49:56.3682840Z Removing: /Users/runner/Library/Caches/Homebrew/libgcrypt_bottle_manifest--1.12.3... (0B)
+2026-10-28T02:49:56.3683820Z Removing: /Users/runner/Library/Caches/Homebrew/libgpg-error--1.61... (0B)
+2026-10-28T02:49:56.3684400Z Removing: /Users/runner/Library/Caches/Homebrew/libgpg-error_bottle_manifest--1.61... (0B)
+2026-10-28T02:49:56.3695000Z Removing: /Users/runner/Library/Caches/Homebrew/libidn2--2.3.8... (0B)
+2026-10-28T02:49:56.3699650Z Removing: /Users/runner/Library/Caches/Homebrew/libidn2_bottle_manifest--2.3.8... (0B)
+2026-10-28T02:49:56.3857290Z Removing: /Users/runner/Library/Caches/Homebrew/libksba--1.8.1... (0B)
+2026-10-28T02:49:56.3857840Z Removing: /Users/runner/Library/Caches/Homebrew/libksba_bottle_manifest--1.8.1... (0B)
+2026-10-28T02:49:56.3868210Z Removing: /Users/runner/Library/Caches/Homebrew/libmpc--1.4.1... (0B)
+2026-10-28T02:49:56.3868920Z Removing: /Users/runner/Library/Caches/Homebrew/libmpc_bottle_manifest--1.4.1... (0B)
+2026-10-28T02:49:56.3874790Z Removing: /Users/runner/Library/Caches/Homebrew/libnghttp2--1.70.0... (0B)
+2026-10-28T02:49:56.3875960Z Removing: /Users/runner/Library/Caches/Homebrew/libnghttp2_bottle_manifest--1.70.0... (0B)
+2026-10-28T02:49:56.4055360Z Removing: /Users/runner/Library/Caches/Homebrew/libnghttp3--1.18.0... (0B)
+2026-10-28T02:49:56.4056780Z Removing: /Users/runner/Library/Caches/Homebrew/libnghttp3_bottle_manifest--1.18.0... (0B)
+2026-10-28T02:49:56.4060260Z ##[warning]Skipping libngtcp2: most recent version 1.25.0_1 not installed
+2026-10-28T02:49:56.4062600Z Removing: /Users/runner/Library/Caches/Homebrew/libngtcp2--1.25.0... (0B)
+2026-10-28T02:49:56.4063910Z Removing: /Users/runner/Library/Caches/Homebrew/libngtcp2_bottle_manifest--1.25.0... (0B)
+2026-10-28T02:49:56.4066180Z ##[warning]Skipping libpng: most recent version 1.6.59 not installed
+2026-10-28T02:49:56.4068390Z Removing: /Users/runner/Library/Caches/Homebrew/libpng--1.6.58... (0B)
+2026-10-28T02:49:56.4068870Z Removing: /Users/runner/Library/Caches/Homebrew/libpng_bottle_manifest--1.6.58... (0B)
+2026-10-28T02:49:56.4070020Z ##[warning]Skipping libpq: most recent version 18.6_2 not installed
+2026-10-28T02:49:56.4188250Z Removing: /Users/runner/Library/Caches/Homebrew/libpq--18.6... (0B)
+2026-10-28T02:49:56.4193360Z Removing: /Users/runner/Library/Caches/Homebrew/libpq_bottle_manifest--18.6... (0B)
+2026-10-28T02:49:56.4195300Z Removing: /Users/runner/Library/Caches/Homebrew/libpsl--0.23.3... (0B)
+2026-10-28T02:49:56.4196150Z Removing: /Users/runner/Library/Caches/Homebrew/libpsl_bottle_manifest--0.23.3... (0B)
+2026-10-28T02:49:56.4202550Z Removing: /Users/runner/Library/Caches/Homebrew/libsodium--1.0.22... (0B)
+2026-10-28T02:49:56.4205770Z Removing: /Users/runner/Library/Caches/Homebrew/libsodium_bottle_manifest--1.0.22... (0B)
+2026-10-28T02:49:56.4208420Z ##[warning]Skipping libssh2: most recent version 1.11.1_7 not installed
+2026-10-28T02:49:56.4210500Z Removing: /Users/runner/Library/Caches/Homebrew/libssh2--1.11.1_4... (0B)
+2026-10-28T02:49:56.4212000Z Removing: /Users/runner/Library/Caches/Homebrew/libssh2_bottle_manifest--1.11.1_4... (0B)
+2026-10-28T02:49:56.4216970Z Removing: /Users/runner/Library/Caches/Homebrew/libtasn1--4.21.0... (0B)
+2026-10-28T02:49:56.4218460Z Removing: /Users/runner/Library/Caches/Homebrew/libtasn1_bottle_manifest--4.21.0... (0B)
+2026-10-28T02:49:56.4225600Z Removing: /Users/runner/Library/Caches/Homebrew/libtiff--4.7.2... (0B)
+2026-10-28T02:49:56.4231750Z Removing: /Users/runner/Library/Caches/Homebrew/libtiff_bottle_manifest--4.7.2-1... (0B)
+2026-10-28T02:49:56.4318580Z ##[warning]Skipping libunistring: most recent version 1.5 not installed
+2026-10-28T02:49:56.4321030Z Removing: /Users/runner/Library/Caches/Homebrew/libunistring--1.4.2... (0B)
+2026-10-28T02:49:56.4322330Z Removing: /Users/runner/Library/Caches/Homebrew/libunistring_bottle_manifest--1.4.2... (0B)
+2026-10-28T02:49:56.4323470Z Removing: /Users/runner/Library/Caches/Homebrew/libusb--1.0.30... (0B)
+2026-10-28T02:49:56.4324700Z Removing: /Users/runner/Library/Caches/Homebrew/libusb_bottle_manifest--1.0.30... (0B)
+2026-10-28T02:49:56.4327420Z ##[warning]Skipping libuv: most recent version 1.53.0 not installed
+2026-10-28T02:49:56.4329550Z Removing: /Users/runner/Library/Caches/Homebrew/libuv--1.52.1... (0B)
+2026-10-28T02:49:56.4330610Z Removing: /Users/runner/Library/Caches/Homebrew/libuv_bottle_manifest--1.52.1... (0B)
+2026-10-28T02:49:56.4332490Z ##[warning]Skipping libx11: most recent version 1.8.14 not installed
+2026-10-28T02:49:56.4334740Z Removing: /Users/runner/Library/Caches/Homebrew/libx11--1.8.13... (0B)
+2026-10-28T02:49:56.4335800Z Removing: /Users/runner/Library/Caches/Homebrew/libx11_bottle_manifest--1.8.13... (0B)
+2026-10-28T02:49:56.4337250Z Removing: /Users/runner/Library/Caches/Homebrew/libxau--1.0.12... (0B)
+2026-10-28T02:49:56.4338350Z Removing: /Users/runner/Library/Caches/Homebrew/libxau_bottle_manifest--1.0.12... (0B)
+2026-10-28T02:49:56.4339440Z Removing: /Users/runner/Library/Caches/Homebrew/libxcb--1.17.0... (0B)
+2026-10-28T02:49:56.4340540Z Removing: /Users/runner/Library/Caches/Homebrew/libxcb_bottle_manifest--1.17.0-1... (0B)
+2026-10-28T02:49:56.4341700Z Removing: /Users/runner/Library/Caches/Homebrew/libxdmcp--1.1.5... (0B)
+2026-10-28T02:49:56.4343060Z Removing: /Users/runner/Library/Caches/Homebrew/libxdmcp_bottle_manifest--1.1.5... (0B)
+2026-10-28T02:49:56.4343640Z Removing: /Users/runner/Library/Caches/Homebrew/libxext--1.3.7... (0B)
+2026-10-28T02:49:56.4344050Z Removing: /Users/runner/Library/Caches/Homebrew/libxext_bottle_manifest--1.3.7... (0B)
+2026-10-28T02:49:56.4345660Z ##[warning]Skipping libxrender: most recent version 0.9.13 not installed
+2026-10-28T02:49:56.4346580Z Removing: /Users/runner/Library/Caches/Homebrew/libxrender--0.9.12... (0B)
+2026-10-28T02:49:56.4347020Z Removing: /Users/runner/Library/Caches/Homebrew/libxrender_bottle_manifest--0.9.12... (0B)
+2026-10-28T02:49:56.4347440Z Removing: /Users/runner/Library/Caches/Homebrew/libyaml--0.2.5... (0B)
+2026-10-28T02:49:56.4347850Z Removing: /Users/runner/Library/Caches/Homebrew/libyaml_bottle_manifest--0.2.5... (0B)
+2026-10-28T02:49:56.4348280Z Removing: /Users/runner/Library/Caches/Homebrew/little-cms2--2.19.1... (0B)
+2026-10-28T02:49:56.4355590Z Removing: /Users/runner/Library/Caches/Homebrew/little-cms2_bottle_manifest--2.19.1... (0B)
+2026-10-28T02:49:56.4398700Z Removing: /Users/runner/Library/Caches/Homebrew/llvm@15--15.0.7... (0B)
+2026-10-28T02:49:56.4402970Z Removing: /Users/runner/Library/Caches/Homebrew/llvm@15_bottle_manifest--15.0.7-1... (0B)
+2026-10-28T02:49:56.4409240Z Removing: /Users/runner/Library/Caches/Homebrew/lz4--1.10.0... (0B)
+2026-10-28T02:49:56.4410110Z Removing: /Users/runner/Library/Caches/Homebrew/lz4_bottle_manifest--1.10.0-1... (0B)
+2026-10-28T02:49:56.4420510Z Removing: /Users/runner/Library/Caches/Homebrew/lzo--2.10... (0B)
+2026-10-28T02:49:56.4423710Z Removing: /Users/runner/Library/Caches/Homebrew/lzo_bottle_manifest--2.10... (0B)
+2026-10-28T02:49:56.4424780Z ##[warning]Skipping maven: most recent version 3.10.0 not installed
+2026-10-28T02:49:56.4430790Z Removing: /Users/runner/Library/Caches/Homebrew/maven--3.9.16... (0B)
+2026-10-28T02:49:56.4433500Z Removing: /Users/runner/Library/Caches/Homebrew/maven_bottle_manifest--3.9.16... (0B)
+2026-10-28T02:49:56.4439190Z Removing: /Users/runner/Library/Caches/Homebrew/mpdecimal--4.0.1... (0B)
+2026-10-28T02:49:56.4440870Z Removing: /Users/runner/Library/Caches/Homebrew/mpdecimal_bottle_manifest--4.0.1... (0B)
+2026-10-28T02:49:56.4445660Z Removing: /Users/runner/Library/Caches/Homebrew/mpfr--4.2.2... (0B)
+2026-10-28T02:49:56.4446390Z Removing: /Users/runner/Library/Caches/Homebrew/mpfr_bottle_manifest--4.2.2... (0B)
+2026-10-28T02:49:56.4449950Z Removing: /Users/runner/Library/Caches/Homebrew/nettle--4.0... (0B)
+2026-10-28T02:49:56.4450800Z Removing: /Users/runner/Library/Caches/Homebrew/nettle_bottle_manifest--4.0... (0B)
+2026-10-28T02:49:56.4486760Z Removing: /Users/runner/Library/Caches/Homebrew/ninja--1.13.2... (0B)
+2026-10-28T02:49:56.4491100Z Removing: /Users/runner/Library/Caches/Homebrew/ninja_bottle_manifest--1.13.2... (0B)
+2026-10-28T02:49:56.4501880Z ##[warning]Skipping node@22: most recent version 22.23.4 not installed
+2026-10-28T02:49:56.4503290Z Removing: /Users/runner/Library/Caches/Homebrew/node@22--22.23.2_1... (0B)
+2026-10-28T02:49:56.4504970Z Removing: /Users/runner/Library/Caches/Homebrew/node@22_bottle_manifest--22.23.2_1... (0B)
+2026-10-28T02:49:56.4510920Z Removing: /Users/runner/Library/Caches/Homebrew/npth--1.8... (0B)
+2026-10-28T02:49:56.4526070Z Removing: /Users/runner/Library/Caches/Homebrew/npth_bottle_manifest--1.8... (0B)
+2026-10-28T02:49:56.4529430Z Removing: /Users/runner/Library/Caches/Homebrew/oniguruma--6.9.10... (0B)
+2026-10-28T02:49:56.4530740Z Removing: /Users/runner/Library/Caches/Homebrew/oniguruma_bottle_manifest--6.9.10... (0B)
+2026-10-28T02:49:56.4533800Z ##[warning]Skipping openjdk: most recent version 27.0.1.0.3 not installed
+2026-10-28T02:49:56.4537630Z Removing: /Users/runner/Library/Caches/Homebrew/openjdk--26.0.2.1... (0B)
+2026-10-28T02:49:56.4538810Z Removing: /Users/runner/Library/Caches/Homebrew/openjdk_bottle_manifest--26.0.2.1... (0B)
+2026-10-28T02:49:56.4540990Z Removing: /Users/runner/Library/Caches/Homebrew/openssl@1.1--1.1.1w... (0B)
+2026-10-28T02:49:56.4541770Z Removing: /Users/runner/Library/Caches/Homebrew/openssl@1.1_bottle_manifest--1.1.1w... (0B)
+2026-10-28T02:49:56.4544380Z ##[warning]Skipping openssl@3: most recent version 3.5.9 not installed
+2026-10-28T02:49:56.4545450Z Removing: /Users/runner/Library/Caches/Homebrew/openssl@3--3.6.3... (0B)
+2026-10-28T02:49:56.4545960Z Removing: /Users/runner/Library/Caches/Homebrew/openssl@3_bottle_manifest--3.6.3-2... (0B)
+2026-10-28T02:49:56.4552490Z Removing: /Users/runner/Library/Caches/Homebrew/p11-kit--0.26.5... (0B)
+2026-10-28T02:49:56.4553620Z Removing: /Users/runner/Library/Caches/Homebrew/p11-kit_bottle_manifest--0.26.5... (0B)
+2026-10-28T02:49:56.4561650Z Removing: /Users/runner/Library/Caches/Homebrew/p7zip--17.06... (0B)
+2026-10-28T02:49:56.4563950Z Removing: /Users/runner/Library/Caches/Homebrew/p7zip_bottle_manifest--17.06... (0B)
+2026-10-28T02:49:56.4572180Z Removing: /Users/runner/Library/Caches/Homebrew/packer--1.16.0.zip... (0B)
+2026-10-28T02:49:56.4577210Z ##[warning]Skipping pcre2: most recent version 10.49 not installed
+2026-10-28T02:49:56.4580630Z Removing: /Users/runner/Library/Caches/Homebrew/pcre2--10.47_1... (0B)
+2026-10-28T02:49:56.4581090Z Removing: /Users/runner/Library/Caches/Homebrew/pcre2_bottle_manifest--10.47_1... (0B)
+2026-10-28T02:49:56.4589010Z Removing: /Users/runner/Library/Caches/Homebrew/perl--5.44.0... (0B)
+2026-10-28T02:49:56.4591820Z Removing: /Users/runner/Library/Caches/Homebrew/perl_bottle_manifest--5.44.0... (0B)
+2026-10-28T02:49:56.4604230Z Removing: /Users/runner/Library/Caches/Homebrew/pinentry--1.3.3... (0B)
+2026-10-28T02:49:56.4606690Z Removing: /Users/runner/Library/Caches/Homebrew/pinentry_bottle_manifest--1.3.3... (0B)
+2026-10-28T02:49:56.4615460Z ##[warning]Skipping pipx: most recent version 1.18.4 not installed
+2026-10-28T02:49:56.4616730Z Removing: /Users/runner/Library/Caches/Homebrew/pipx--1.16.7... (0B)
+2026-10-28T02:49:56.4619840Z Removing: /Users/runner/Library/Caches/Homebrew/pipx_bottle_manifest--1.16.7... (0B)
+2026-10-28T02:49:56.4636090Z Removing: /Users/runner/Library/Caches/Homebrew/pixman--0.46.4... (0B)
+2026-10-28T02:49:56.4636850Z Removing: /Users/runner/Library/Caches/Homebrew/pixman_bottle_manifest--0.46.4-1... (0B)
+2026-10-28T02:49:56.4642370Z ##[warning]Skipping pkgconf: most recent version 3.0.10 not installed
+2026-10-28T02:49:56.4644680Z Removing: /Users/runner/Library/Caches/Homebrew/pkgconf--3.0.6... (0B)
+2026-10-28T02:49:56.4647930Z Removing: /Users/runner/Library/Caches/Homebrew/pkgconf_bottle_manifest--3.0.6-1... (0B)
+2026-10-28T02:49:56.4653690Z ##[warning]Skipping pycparser: most recent version 3.12 not installed
+2026-10-28T02:49:56.4655900Z Removing: /Users/runner/Library/Caches/Homebrew/pycparser--3.0... (0B)
+2026-10-28T02:49:56.4659980Z Removing: /Users/runner/Library/Caches/Homebrew/pycparser_bottle_manifest--3.0... (0B)
+2026-10-28T02:49:56.4668440Z ##[warning]Skipping pydantic: most recent version 2.14.1 not installed
+2026-10-28T02:49:56.4674270Z Removing: /Users/runner/Library/Caches/Homebrew/pydantic--2.13.5... (0B)
+2026-10-28T02:49:56.4677140Z Removing: /Users/runner/Library/Caches/Homebrew/pydantic_bottle_manifest--2.13.5... (0B)
+2026-10-28T02:49:56.4686720Z ##[warning]Skipping python@3.14: most recent version 3.14.10 not installed
+2026-10-28T02:49:56.4688920Z Removing: /Users/runner/Library/Caches/Homebrew/python@3.14--3.14.7... (0B)
+2026-10-28T02:49:56.4692890Z Removing: /Users/runner/Library/Caches/Homebrew/python@3.14_bottle_manifest--3.14.7... (0B)
+2026-10-28T02:49:56.4696160Z ##[warning]Skipping readline: most recent version 8.3.6 not installed
+2026-10-28T02:49:56.4701460Z Removing: /Users/runner/Library/Caches/Homebrew/readline--8.3.3... (0B)
+2026-10-28T02:49:56.4702340Z Removing: /Users/runner/Library/Caches/Homebrew/readline_bottle_manifest--8.3.3... (0B)
+2026-10-28T02:49:56.4703360Z ##[warning]Skipping rpds-py: most recent version 2026.9.1_1 not installed
+2026-10-28T02:49:56.4704250Z Removing: /Users/runner/Library/Caches/Homebrew/rpds-py--2026.6.3... (0B)
+2026-10-28T02:49:56.4706490Z Removing: /Users/runner/Library/Caches/Homebrew/rpds-py_bottle_manifest--2026.6.3... (0B)
+2026-10-28T02:49:56.4710140Z ##[warning]Skipping ruby@3.3: most recent version 3.3.13 not installed
+2026-10-28T02:49:56.4711050Z Removing: /Users/runner/Library/Caches/Homebrew/ruby@3.3--3.3.12... (0B)
+2026-10-28T02:49:56.4711880Z Removing: /Users/runner/Library/Caches/Homebrew/ruby@3.3_bottle_manifest--3.3.12... (0B)
+2026-10-28T02:49:56.4714830Z ##[warning]Skipping rustup: most recent version 1.29.2 not installed
+2026-10-28T02:49:56.4715740Z Removing: /Users/runner/Library/Caches/Homebrew/rustup--1.29.0... (0B)
+2026-10-28T02:49:56.4719580Z Removing: /Users/runner/Library/Caches/Homebrew/rustup_bottle_manifest--1.29.0... (0B)
+2026-10-28T02:49:56.4725040Z ##[warning]Skipping selenium-server: most recent version 4.51.0 not installed
+2026-10-28T02:49:56.4726990Z Removing: /Users/runner/Library/Caches/Homebrew/selenium-server--4.48.0... (0B)
+2026-10-28T02:49:56.4730070Z Removing: /Users/runner/Library/Caches/Homebrew/selenium-server_bottle_manifest--4.48.0... (0B)
+2026-10-28T02:49:56.4731130Z ##[warning]Skipping simdjson: most recent version 5.0.6 not installed
+2026-10-28T02:49:56.4731800Z Removing: /Users/runner/Library/Caches/Homebrew/simdjson--4.6.9... (0B)
+2026-10-28T02:49:56.4732260Z Removing: /Users/runner/Library/Caches/Homebrew/simdjson_bottle_manifest--4.6.9... (0B)
+2026-10-28T02:49:56.4733000Z ##[warning]Skipping simdutf: most recent version 9.3.3 not installed
+2026-10-28T02:49:56.4745180Z Removing: /Users/runner/Library/Caches/Homebrew/simdutf--9.1.0... (0B)
+2026-10-28T02:49:56.4751800Z Removing: /Users/runner/Library/Caches/Homebrew/simdutf_bottle_manifest--9.1.0... (0B)
+2026-10-28T02:49:56.4755370Z ##[warning]Skipping sqlite: most recent version 3.54.1 not installed
+2026-10-28T02:49:56.4757370Z Removing: /Users/runner/Library/Caches/Homebrew/sqlite--3.53.4... (0B)
+2026-10-28T02:49:56.4760400Z Removing: /Users/runner/Library/Caches/Homebrew/sqlite_bottle_manifest--3.53.4-1... (0B)
+2026-10-28T02:49:56.4762490Z ##[warning]Skipping swiftformat: most recent version 0.64.4 not installed
+2026-10-28T02:49:56.4764320Z Removing: /Users/runner/Library/Caches/Homebrew/swiftformat--0.63.0... (0B)
+2026-10-28T02:49:56.4765590Z Removing: /Users/runner/Library/Caches/Homebrew/swiftformat_bottle_manifest--0.63.0... (0B)
+2026-10-28T02:49:56.4766760Z Removing: /Users/runner/Library/Caches/Homebrew/tcl-tk@8--8.6.18... (0B)
+2026-10-28T02:49:56.4767990Z Removing: /Users/runner/Library/Caches/Homebrew/tcl-tk@8_bottle_manifest--8.6.18... (0B)
+2026-10-28T02:49:56.4769070Z Removing: /Users/runner/Library/Caches/Homebrew/unxip--3.3... (0B)
+2026-10-28T02:49:56.4770190Z Removing: /Users/runner/Library/Caches/Homebrew/unxip_bottle_manifest--3.3-1... (0B)
+2026-10-28T02:49:56.4771260Z Removing: /Users/runner/Library/Caches/Homebrew/uvwasi--0.0.23... (0B)
+2026-10-28T02:49:56.4773760Z Removing: /Users/runner/Library/Caches/Homebrew/uvwasi_bottle_manifest--0.0.23-1... (0B)
+2026-10-28T02:49:56.4785720Z Removing: /Users/runner/Library/Caches/Homebrew/webp--1.6.0... (0B)
+2026-10-28T02:49:56.4793690Z Removing: /Users/runner/Library/Caches/Homebrew/webp_bottle_manifest--1.6.0... (0B)
+2026-10-28T02:49:56.4797660Z ##[warning]Skipping wget: most recent version 1.25.0_2 not installed
+2026-10-28T02:49:56.4798600Z Removing: /Users/runner/Library/Caches/Homebrew/wget--1.25.0... (0B)
+2026-10-28T02:49:56.4799430Z Removing: /Users/runner/Library/Caches/Homebrew/wget_bottle_manifest--1.25.0-2... (0B)
+2026-10-28T02:49:56.4799870Z Removing: /Users/runner/Library/Caches/Homebrew/xcbeautify--3.2.1... (0B)
+2026-10-28T02:49:56.4802430Z Removing: /Users/runner/Library/Caches/Homebrew/xcbeautify_bottle_manifest--3.2.1... (0B)
+2026-10-28T02:49:56.4809880Z ##[warning]Skipping xorgproto: most recent version 2026.1 not installed
+2026-10-28T02:49:56.4811050Z Removing: /Users/runner/Library/Caches/Homebrew/xorgproto--2025.1... (0B)
+2026-10-28T02:49:56.4813580Z Removing: /Users/runner/Library/Caches/Homebrew/xorgproto_bottle_manifest--2025.1... (0B)
+2026-10-28T02:49:56.4819600Z ##[warning]Skipping xz: most recent version 5.8.4 not installed
+2026-10-28T02:49:56.4820820Z Removing: /Users/runner/Library/Caches/Homebrew/xz--5.8.3... (0B)
+2026-10-28T02:49:56.4823280Z Removing: /Users/runner/Library/Caches/Homebrew/xz_bottle_manifest--5.8.3... (0B)
+2026-10-28T02:49:56.4835380Z ##[warning]Skipping yq: most recent version 4.54.1 not installed
+2026-10-28T02:49:56.4837600Z Removing: /Users/runner/Library/Caches/Homebrew/yq--4.53.6... (0B)
+2026-10-28T02:49:56.4838800Z Removing: /Users/runner/Library/Caches/Homebrew/yq_bottle_manifest--4.53.6... (0B)
+2026-10-28T02:49:56.4848500Z Removing: /Users/runner/Library/Caches/Homebrew/zstd--1.5.7_1... (0B)
+2026-10-28T02:49:56.4855390Z Removing: /Users/runner/Library/Caches/Homebrew/zstd_bottle_manifest--1.5.7_1... (0B)
+2026-10-28T02:49:56.5977540Z Removing: /Users/runner/Library/Caches/Homebrew/expect--5.45.4_3... (0B)
+2026-10-28T02:49:56.5979160Z Removing: /Users/runner/Library/Caches/Homebrew/expect_bottle_manifest--5.45.4_3... (0B)
+2026-10-28T02:49:56.5979710Z Removing: /Users/runner/Library/Caches/Homebrew/Cask/firefox--154.0.1.dmg... (0B)
+2026-10-28T02:49:56.5985980Z Removing: /Users/runner/Library/Caches/Homebrew/Cask/microsoft-edge--152.0.4191.53,5978bacb-e3c1-46e9-bacf-09e801724fab.dmg... (0B)
+2026-10-28T02:49:56.5994370Z Removing: /Users/runner/Library/Caches/Homebrew/Cask/session-manager-plugin--1.2.835.0.pkg... (0B)
+2026-10-28T02:49:56.5995150Z Removing: /Users/runner/Library/Caches/Homebrew/Cask/google-chrome--152.0.7977.65.dmg... (0B)
+2026-10-28T02:49:56.6703150Z Removing: /Users/runner/Library/Caches/Homebrew/bootsnap/cbcc7a28608961f53179008c4df6fbdd0012109a271c795809dd4641a0f4d195... (1,070 files, 9.8MB)
+2026-10-28T02:49:56.7850970Z Removing: /Users/runner/Library/Logs/Homebrew/python@3.14... (64B)
+2026-10-28T02:49:56.7860970Z Removing: /Users/runner/Library/Logs/Homebrew/glib... (64B)
+2026-10-28T02:49:56.7861510Z Removing: /Users/runner/Library/Logs/Homebrew/fontconfig... (64B)
+2026-10-28T02:49:56.7861960Z Removing: /Users/runner/Library/Logs/Homebrew/rustup... (64B)
+2026-10-28T02:49:56.7862380Z Removing: /Users/runner/Library/Logs/Homebrew/gcc@14... (64B)
+2026-10-28T02:49:56.7862840Z Removing: /Users/runner/Library/Logs/Homebrew/gcc@13... (64B)
+2026-10-28T02:49:56.7863270Z Removing: /Users/runner/Library/Logs/Homebrew/gcc@15... (64B)
+2026-10-28T02:49:56.7890940Z Removing: /Users/runner/Library/Logs/Homebrew/openssl@3... (64B)
+2026-10-28T02:49:56.7893270Z Removing: /Users/runner/Library/Logs/Homebrew/ca-certificates... (64B)
+2026-10-28T02:49:56.7893750Z Removing: /Users/runner/Library/Logs/Homebrew/openssl@1.1... (64B)
+2026-10-28T02:49:56.7894220Z Removing: /Users/runner/Library/Logs/Homebrew/bicep... (113B)
+2026-10-28T02:49:56.7894690Z Removing: /Users/runner/Library/Logs/Homebrew/gnupg... (64B)
+2026-10-28T02:49:56.7895130Z Removing: /Users/runner/Library/Logs/Homebrew/gnutls... (64B)
+2026-10-28T02:49:56.7896780Z Removing: /Users/runner/Library/Logs/Homebrew/packer... (116B)
+2026-10-28T02:50:02.7329980Z Pruned 3 symbolic links and 11 directories from /opt/homebrew
+2026-10-28T02:50:05.5558880Z Removing: /opt/homebrew/Library/Homebrew/vendor/portable-ruby/4.0.6... (1,707 files, 34.6MB)
+2026-10-28T02:50:05.7002140Z [34m==>[0m [1mThis operation has freed approximately 44.4MB of disk space.[0m
+2026-10-28T02:50:05.7117970Z [34m==>[0m [1mbrew install --cask homebrew/cask/azure-cli[0m
+2026-10-28T02:50:06.6501290Z [34m==>[0m [1mWould install 1 cask:[0m
+2026-10-28T02:50:06.6501750Z azure-cli
+2026-10-28T02:50:06.6502190Z [34m==>[0m [1mWould install 7 dependencies for azure-cli:[0m
+2026-10-28T02:50:06.6502670Z python@3.14 ca-certificates openssl@4 readline sqlite xz expat
+2026-10-28T02:50:06.6624060Z ##[warning]You are using macOS 14.
+We (and Apple) do not provide support for this old version.
+
+Homebrew no longer builds bottles for this configuration.
+Consider MacPorts, which provides binary packages for this macOS version:
+  https://www.macports.org
+2026-10-28T02:50:07.0015460Z [32m==>[0m [1mFetching downloads for: [32mazure-cli[39m[0m
+2026-10-28T02:50:14.8813440Z ✔︎ Cask azure-cli (2.91.0)
+2026-10-28T02:50:15.6340870Z [32m==>[0m [1mFetching dependency downloads[0m
+2026-10-28T02:50:15.6344140Z ✔︎ API Source openssl@4.rb
+2026-10-28T02:50:15.6460040Z ✔︎ Bottle Manifest ca-certificates (2026-10-20)
+2026-10-28T02:50:16.1867240Z ✔︎ Formula openssl@4 (4.1.0)
+2026-10-28T02:50:16.8716390Z ✔︎ Bottle ca-certificates (2026-10-20)
+2026-10-28T02:50:16.8817660Z [34m==>[0m [1mInstalling dependencies: openssl@4[0m
+2026-10-28T02:50:17.1335080Z [32m==>[0m [1mUpgrading openssl@4 dependency: [32mca-certificates[39m (2026-08-13 -> 2026-10-20)[0m
+2026-10-28T02:50:17.1357660Z [34m==>[0m [1mPouring ca-certificates--2026-10-20.all.bottle.tar.gz[0m
+2026-10-28T02:50:29.2871730Z 🍺  /opt/homebrew/Cellar/ca-certificates/2026-10-20: 5 files, 194.7KB
+2026-10-28T02:50:29.2874660Z [32m==>[0m [1mInstalling [32mopenssl@4[39m[0m
+2026-10-28T02:50:33.6665430Z [34m==>[0m [1mperl ./Configure --prefix=/opt/homebrew/Cellar/openssl@4/4.1.0 --openssldir=[0m
+2026-10-28T02:50:44.6516120Z [34m==>[0m [1mmake[0m
+2026-10-28T02:53:09.5190600Z [34m==>[0m [1mmake install MANDIR=/opt/homebrew/Cellar/openssl@4/4.1.0/share/man MANSUFFIX[0m
+2026-10-28T02:53:27.6698620Z Unlinking /opt/homebrew/Cellar/openssl@3/3.6.3... 6565 symlinks removed.
+2026-10-28T02:53:28.8058860Z ##[warning]These files were overwritten during the `brew link` step:
+2026-10-28T02:53:28.8079160Z /opt/homebrew/bin/openssl
+2026-10-28T02:53:28.8080030Z 
+2026-10-28T02:53:28.8081330Z They have been backed up to: /Users/runner/Library/Caches/Homebrew/Backup
+2026-10-28T02:53:31.0950250Z [34m==>[0m [1mSummary[0m
+2026-10-28T02:53:31.1954020Z 🍺  /opt/homebrew/Cellar/openssl@4/4.1.0: 6,860 files, 24.5MB, built in 3 minutes 1 second
+2026-10-28T02:53:31.1955660Z [32m==>[0m [1mInstalling Cask [32mazure-cli[39m[0m
+2026-10-28T02:53:31.1996350Z [34m==>[0m [1mLinking Binary 'az' to '/opt/homebrew/bin/az'[0m
+2026-10-28T02:53:31.2103070Z [34m==>[0m [1mLinking Bash Completion 'az' to '/opt/homebrew/etc/bash_completion.d/az'[0m
+2026-10-28T02:53:31.2181660Z [34m==>[0m [1mLinking Zsh Completion '_az' to '/opt/homebrew/share/zsh/site-functions/_az'[0m
+2026-10-28T02:53:31.2247630Z [34m==>[0m [1mLinking Fish Completion 'az.fish' to '/opt/homebrew/share/fish/vendor_completions.d/az.fish'[0m
+2026-10-28T02:53:31.2351830Z 🍺  azure-cli was successfully installed!
+2026-10-28T02:53:31.2354030Z 
+2026-10-28T02:53:31.2354740Z This is a Tier 3 configuration:
+2026-10-28T02:53:31.2555950Z   [4mhttps://docs.brew.sh/Support-Tiers#tier-3[24m
+2026-10-28T02:53:31.2557240Z [1mYou can report issues with Tier 3 configurations to Homebrew/* repositories![0m
+2026-10-28T02:53:31.2557870Z   
+2026-10-28T02:53:31.2558280Z Read the above document before opening any issues or PRs.
+2026-10-28T02:53:31.2558780Z [34m==>[0m [1mazure-cli has been moved to homebrew/cask.[0m
+2026-10-28T02:53:31.2572800Z The existing keg has been unlinked.
+2026-10-28T02:53:31.2573340Z Please uninstall the formula when convenient by running:
+2026-10-28T02:53:31.2576970Z   brew uninstall --formula --force azure-cli
+2026-10-28T02:53:33.3453370Z ==> Installation successful!
+2026-10-28T02:53:33.3454110Z 
+2026-10-28T02:53:33.3464780Z ==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
+2026-10-28T02:53:33.3532700Z Read the analytics documentation (and how to opt-out) here:
+2026-10-28T02:53:33.3534030Z   https://docs.brew.sh/Analytics
+2026-10-28T02:53:33.3535030Z No analytics data has been sent yet (nor will any be during this install run).
+2026-10-28T02:53:33.3535800Z 
+2026-10-28T02:53:33.3546190Z ==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+2026-10-28T02:53:33.3585970Z   https://github.com/Homebrew/brew#donations
+2026-10-28T02:53:33.3586760Z 
+2026-10-28T02:53:33.4004560Z ==> Next steps:
+2026-10-28T02:53:33.4123170Z - Run these commands in your terminal to add Homebrew to your PATH:
+2026-10-28T02:53:33.4124310Z     echo >> /Users/runner/.bash_profile
+2026-10-28T02:53:33.4125390Z     echo 'eval "$(/opt/homebrew/bin/brew shellenv bash)"' >> /Users/runner/.bash_profile
+2026-10-28T02:53:33.4126420Z     eval "$(/opt/homebrew/bin/brew shellenv bash)"
+2026-10-28T02:53:33.4173540Z - Run brew help to get started
+2026-10-28T02:53:33.4174450Z - Further documentation:
+2026-10-28T02:53:33.4175110Z     https://docs.brew.sh
+2026-10-28T02:53:33.4175590Z 
+2026-10-28T02:53:33.4203090Z Fix applied successfully!
+2026-10-28T02:53:33.4248600Z Checking if pkg-config is installed or built ... pkg-config is not installed
+2026-10-28T02:53:33.4249700Z Automatically fixing install-pkgconfig ...
+2026-10-28T02:53:36.3227720Z [32m[02:53:36] [I] Extracting pkg-config-aarch64-macos package to /Users/runner/gd-php/spc-arm64/pkgroot/aarch64-darwin/pkg-config-aarch64-macos ...[0m
+2026-10-28T02:53:36.3474600Z Fix applied successfully!
+2026-10-28T02:53:36.3560900Z Checking if pkg-config is working ... 0.29.2
+2026-10-28T02:53:36.3581940Z Checking if necessary tools are installed ... missing system commands: re2c, autoconf, automake, xz, cmake, glibtoolize
+2026-10-28T02:53:36.3583350Z Automatically fixing build-tools ...
+2026-10-28T02:53:36.3584540Z [32m[02:53:36] [I] [33m[EXEC] [0m[32mbrew install --formula 're2c'[0m[0m
+2026-10-28T02:53:36.3636520Z sh: brew: command not found
+2026-10-28T02:53:36.3651810Z Fix failed: Command exited with non-zero code: 127
+2026-10-28T02:53:36.3652590Z Failed to apply fix!
+2026-10-28T02:53:36.4928840Z ##[error]Process completed with exit code 1.
+2026-10-28T02:53:36.5226770Z Post job cleanup.
+2026-10-28T02:53:37.0426300Z [command]/opt/homebrew/bin/git version
+2026-10-28T02:53:37.0489390Z git version 2.55.0
+2026-10-28T02:53:37.0515730Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/161c7cbc-b805-44ac-861a-c666d8bfc7fb/.gitconfig'
+2026-10-28T02:53:37.0527770Z Temporarily overriding HOME='/Users/runner/work/_temp/161c7cbc-b805-44ac-861a-c666d8bfc7fb' before making global git config changes
+2026-10-28T02:53:37.0529230Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-28T02:53:37.0530810Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/garble-php-build/garble-php-build
+2026-10-28T02:53:37.0600160Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-28T02:53:37.0653680Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-28T02:53:37.1953300Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-28T02:53:37.2045990Z http.https://github.com/.extraheader
+2026-10-28T02:53:37.2056900Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-28T02:53:37.2219150Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-28T02:53:37.3364870Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-28T02:53:37.3466580Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-28T02:53:37.4512070Z Cleaning up orphan processes
+2026-10-28T02:53:38.3473460Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

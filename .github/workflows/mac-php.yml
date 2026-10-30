@@ -41,6 +41,7 @@ jobs:
           LIBS="$(otool -L "$BIN" | tail -n +2 | awk '{print $1}' | grep -v -E '^(/usr/lib/|/System/)' || true)"
           test -z "$LIBS"
           MINOS="$(otool -l "$BIN" | awk '/LC_BUILD_VERSION/{f=1} f&&/minos/{print $2; exit}')"
+          test -n "$MINOS"
           test "$(printf '%s\n11.0\n' "$MINOS" | sort -V | tail -1)" = 11.0
           "$BIN" -v
           EXTS="$(sed -n 's/^EXTS="\([^"]*\)".*/\1/p' mac_php_build.sh)"
